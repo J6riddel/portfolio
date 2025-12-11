@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jake Riddell – Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #050816;
+      --card: #0b1020;
+      --accent: #7c3aed;
+      --accent-soft: rgba(124, 58, 237, 0.15);
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --border: #1f2933;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
+      color: var(--text);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Layout */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(
+        to bottom,
+        rgba(3, 7, 18, 0.9),
+        rgba(3, 7, 18, 0.6),
+        transparent
+      );
+      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+    }
+
+    .nav {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #f97316, #ec4899 40%, #6366f1);
+      box-shadow: 0 0 18px rgba(129, 140, 248, 0.9);
+    }
+
+    .name {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      color: #e5e7eb;
+    }
+
+    .nav-right {
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-link {
+      position: relative;
+      padding-bottom: 0.15rem;
+      color: var(--muted);
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(to right, #6366f1, #ec4899, #f97316);
+      transition: width 0.2s ease-out;
+    }
+
+    .nav-link:hover {
+      color: #e5e7eb;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3.5rem;
+    }
+
+    @media (min-width: 768px) {
+      main {
+        padding-top: 3.5rem;
+      }
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      gap: 1.75rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        grid-template-columns: minmax(0, 2.3fr) minmax(0, 1.7fr);
+        align-items: center;
+        gap: 2.5rem;
+        margin-bottom: 3.25rem;
+      }
+    }
+
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 3vw + 1rem, 2.6rem);
+      font-weight: 650;
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: 34rem;
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      background: radial-gradient(circle at left, rgba(96, 165, 250, 0.3), transparent 55%);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      color: #e5e7eb;
+      font-size: 0.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #4ade80;
+      box-shadow: 0 0 8px rgba(74, 222, 128, 0.9);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.25rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .hero-meta span::before {
+      content: "•";
+      color: rgba(148, 163, 184, 0.7);
+    }
+
+    @media (max-width: 480px) {
+      .hero-meta span::before {
+        content: "";
+      }
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: 1.25rem;
+      padding: 1.5rem 1.4rem;
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(129, 140, 248, 0.16), transparent 55%),
+        var(--card);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      box-shadow:
+        0 18px 40px rgba(15, 23, 42, 0.92),
+        0 0 0 1px rgba(15, 23, 42, 0.9) inset;
+    }
+
+    .hero-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .chip {
+      font-size: 0.72rem;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .chip-strong {
+      border-color: rgba(129, 140, 248, 0.9);
+      background: linear-gradient(
+        to right,
+        rgba(79, 70, 229, 0.32),
+        rgba(236, 72, 153, 0.32)
+      );
+    }
+
+    .hero-card-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-card-text {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .hero-card-footer strong {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .section-heading {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-intro {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 38rem;
+      margin-bottom: 1.4rem;
+    }
+
+    /* Cards & grids */
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .card {
+      border-radius: 1rem;
+      padding: 1rem;
+      background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.12), transparent 55%),
+        var(--card);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 550;
+    }
+
+    .card-meta {
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .card-body {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 0.7rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      padding: 0.2rem 0.45rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      color: #e5e7eb;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .skills-grid {
+        grid-template-columns: 1.3fr 1fr;
+      }
+    }
+
+    .skill-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+    }
+
+    .skill-pill {
+      font-size: 0.74rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: #e5e7eb;
+    }
+
+    .skill-pill-strong {
+      border-color: rgba(129, 140, 248, 0.9);
+      background: linear-gradient(
+        to right,
+        rgba(79, 70, 229, 0.38),
+        rgba(236, 72, 153, 0.28)
+      );
+    }
+
+    ul {
+      margin: 0.3rem 0 0.6rem 1.1rem;
+      padding: 0;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    li {
+      margin-bottom: 0.2rem;
+    }
+
+    /* Footer */
+    footer {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem 2.5rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-link {
+      color: var(--muted);
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Top navigation -->
+  <header>
+    <div class="nav">
+      <div class="nav-left">
+        <div class="logo-dot"></div>
+        <div class="name">Jake Riddell · AI + UX</div>
+      </div>
+      <nav class="nav-right">
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#futures-skills" class="nav-link">Futures Lab–Aligned Skills</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div>
+        <div class="hero-eyebrow">AI × UX · University of Waterloo</div>
+        <h1 class="hero-title">Designing learning experiences with AI that feel intuitive, trustworthy, and human.</h1>
+        <p class="hero-subtitle">
+          Product-minded designer blending UX, prototyping, and experimentation to explore how emerging AI
+          tools can reshape the way students learn, reflect, and build skills for the future of work.
+        </p>
+        <div class="hero-tagline">
+          <span class="pill-dot"></span>
+          <span>Actively applying to UWaterloo × Google Futures Lab</span>
+        </div>
+        <div class="hero-meta">
+          <span>GBDA student · University of Waterloo</span>
+          <span>AI‑assisted UX prototyping & design systems</span>
+          <span>Open to experiments & collaborations</span>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="hero-chip-row">
+          <span class="chip chip-strong">AI + UX prototyping</span>
+          <span class="chip">Learning tools</span>
+          <span class="chip">Experiment‑driven design</span>
+        </div>
+        <div class="hero-card-title">What this portfolio highlights</div>
+        <p class="hero-card-text">
+          A curated set of projects that show how research, rapid prototyping, and collaboration can turn
+          vague AI opportunities into concrete, testable experiences for learners.
+        </p>
+        <div class="hero-card-footer">
+          <span><strong>Focus</strong> · Learning re‑imagined, feedback loops, and AI‑supported reflection.</span>
+          <span>Built as a static site on GitHub Pages.</span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="section-label">Section · 01</div>
+      <h2 class="section-heading">Projects</h2>
+      <p class="section-intro">
+        Selected work that demonstrates how research, prototyping, and AI tools come together to improve
+        how people learn, practice, and receive feedback. Each project focuses on clarity of problem,
+        process, and measurable impact.
+      </p>
+
+      <div class="grid grid-2">
+        <!-- Project 1 -->
+        <article class="card">
+          <div class="card-header">
+            <h3 class="card-title">AI Study Companion for Project‑Based Courses</h3>
+            <span class="card-meta">UX · Prototyping · AI</span>
+          </div>
+          <p class="card-body">
+            Concept for an AI‑assisted study companion that helps GBDA students break down open‑ended
+            briefs, reflect on feedback, and plan next steps without replacing their own judgment.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Problem framing</span>
+            <span class="tag">Prompt design</span>
+            <span class="tag">Journey mapping</span>
+            <span class="tag">Figma prototype</span>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="card">
+          <div class="card-header">
+            <h3 class="card-title">Lightweight Feedback Loop for Peer Critiques</h3>
+            <span class="card-meta">Research · Systems</span>
+          </div>
+          <p class="card-body">
+            Workflow and interface that help students capture, structure, and revisit peer feedback across
+            a term, using AI only to summarize—not to decide—what “good” looks like.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Information architecture</span>
+            <span class="tag">Ethical AI use</span>
+            <span class="tag">Low‑fi to hi‑fi</span>
+            <span class="tag">Usability heuristics</span>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="card">
+          <div class="card-header">
+            <h3 class="card-title">Learning Analytics Dashboard for Self‑Reflection</h3>
+            <span class="card-meta">Data · UX</span>
+          </div>
+          <p class="card-body">
+            Dashboard concept that turns raw activity data into calm, meaningful cues students can act on,
+            highlighting trends without overwhelming them with metrics.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Data storytelling</span>
+            <span class="tag">Sense‑making</span>
+            <span class="tag">Accessibility</span>
+            <span class="tag">Visual hierarchy</span>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="card">
+          <div class="card-header">
+            <h3 class="card-title">AI‑Assisted Workshop Prep Tool</h3>
+            <span class="card-meta">Collaboration · Facilitation</span>
+          </div>
+          <p class="card-body">
+            Tool idea that helps instructors quickly generate draft prompts, activities, and reflection
+            questions for workshops, while keeping human facilitators in full control.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Co‑design with instructors</span>
+            <span class="tag">Scenario exploration</span>
+            <span class="tag">Constraints‑led ideation</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="section-label">Section · 02</div>
+      <h2 class="section-heading">About</h2>
+      <p class="section-intro">
+        GBDA student, president‑level student leader, and coach who’s used storytelling, prototyping, and
+        experimentation to ship experiences for real audiences. Now focusing that same energy on AI‑enabled
+        learning tools and collaborative workshop environments.
+      </p>
+
+      <div class="grid grid-2">
+        <article class="card">
+          <div class="card-header">
+            <h3 class="card-title">Background</h3>
+          </div>
+          <p class="card-body">
+            Blends design, business, and technology through the Global Business and Digital Arts program at
+            the University of Waterloo, with experience leading student initiatives and working on UX
+            design jams with industry partners.
+          </p>
+          <p class="card-body">
+            Outside of coursework, applies coaching and communication skills from sport to design teams:
+            breaking down complex skills, setting clear goals, and giving actionable feedback.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <h3 class="card-title">How AI fits in</h3>
+          </div>
+          <p class="card-body">
+            Uses AI tools as thinking partners for research synthesis, idea generation, and quick
+            prototyping—while staying critical about limitations, bias, and failure modes.
+          </p>
+          <p class="card-body">
+            Especially interested in how AI can support reflection, metacognition, and personalized
+            learning journeys, aligned with Futures Lab’s focus on “Learning Re‑Imagined”.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Futures Lab–Aligned Skills -->
+    <section id="futures-skills">
+      <div class="section-label">Section · 03</div>
+      <h2 class="section-heading">Futures Lab–Aligned Skills</h2>
+      <p class="section-intro">
+        Skills and mindsets that connect directly to Futures Lab’s goals: exploring how emerging AI
+        technologies reshape learning and work, and prototyping responsible, human‑centered experiences
+        around them.[web:1][web:3]
+      </p>
+
+      <div class="skills-grid">
+        <!-- Left: clusters & evidence -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">AI‑aware design & prototyping</h3>
+          </div>
+          <ul>
+            <li>Frames where AI should be visible, invisible, or explained in an interface.</li>
+            <li>Uses rapid prototyping to test how AI features impact trust, control, and learning outcomes.</li>
+            <li>Designs for failure modes: what happens when the model is wrong, uncertain, or incomplete.</li>
+          </ul>
+          <div class="skill-pill-row">
+            <span class="skill-pill skill-pill-strong">Prompt design & evaluation</span>
+            <span class="skill-pill">Journey mapping for AI features</span>
+            <span class="skill-pill">Hi‑fi prototyping in Figma</span>
+          </div>
+
+          <hr style="border: none; border-top: 1px solid rgba(148,163,184,0.25); margin: 1rem 0;" />
+
+          <div class="card-header">
+            <h3 class="card-title">Collaboration & facilitation</h3>
+          </div>
+          <ul>
+            <li>Comfortable translating between designers, developers, and non‑technical stakeholders.</li>
+            <li>Draws on leadership experience in student organizations to structure workshops and critiques.</li>
+            <li>Openly shares work‑in‑progress, invites feedback, and iterates quickly.</li>
+          </ul>
+          <div class="skill-pill-row">
+            <span class="skill-pill skill-pill-strong">Co‑design sessions</span>
+            <span class="skill-pill">Storytelling & presentations</span>
+            <span class="skill-pill">Feedback‑driven iteration</span>
+          </div>
+
+          <hr style="border: none; border-top: 1px solid rgba(148,163,184,0.25); margin: 1rem 0;" />
+
+          <div class="card-header">
+            <h3 class="card-title">Critical, reflective mindset</h3>
+          </div>
+          <ul>
+            <li>Questions assumptions behind AI outputs and checks for bias, gaps, and edge cases.</li>
+            <li>Uses reflection rituals (journals, retros, debriefs) to improve both process and outcomes.</li>
+            <li>Sees AI as a tool to augment human learning, not replace it.</li>
+          </ul>
+          <div class="skill-pill-row">
+            <span class="skill-pill skill-pill-strong">Critical AI literacy</span>
+            <span class="skill-pill">Research synthesis</span>
+            <span class="skill-pill">Ethical considerations</span>
+          </div>
+        </div>
+
+        <!-- Right: quick facts -->
+        <aside class="card">
+          <div class="card-header">
+            <h3 class="card-title">Quick snapshot</h3>
+          </div>
+          <ul>
+            <li>Comfortable hand‑coding static sites (like this one) and deploying to GitHub Pages.</li>
+            <li>Experienced with prototyping tools (Figma, basic HTML/CSS, light JS) for AI‑assisted flows.</li>
+            <li>Enjoys turning messy problem spaces into testable experiments and workshop activities.</li>
+          </ul>
+
+          <div class="card-header" style="margin-top: 0.6rem;">
+            <h3 class="card-title">What to look at first</h3>
+          </div>
+          <ul>
+            <li>AI Study Companion concept for an end‑to‑end view of research, flows, and visuals.</li>
+            <li>Peer feedback loop project for systems thinking and reflection‑focused UX.</li>
+          </ul>
+
+          <div class="skill-pill-row">
+            <span class="skill-pill">Open to feedback</span>
+            <span class="skill-pill">Excited for Futures Lab</span>
+            <span class="skill-pill">Ready to prototype</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2025 · Jake Riddell</span>
+    <div class="footer-right">
+      <a href="#top" class="footer-link">Back to top</a>
+      <!-- Replace with your real links -->
+      <a href="https://github.com/your-github" class="footer-link">GitHub</a>
+      <a href="https://www.linkedin.com/in/your-linkedin" class="footer-link">LinkedIn</a>
+      <a href="mailto:youremail@uwaterloo.ca" class="footer-link">Email</a>
+    </div>
+  </footer>
+</body>
+</html>
