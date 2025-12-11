@@ -5,197 +5,294 @@
   <title>Rogers – Beyond the Seat · Jake Riddell</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    :root {
-      --bg: #020617;
-      --bg-alt: #030712;
-      --card: #0b1020;
-      --accent: #7c3aed;
-      --text: #f9fafb;
-      --muted: #9ca3af;
-    }
-    * { box-sizing: border-box; scroll-behavior: smooth; }
-    body {
+    * {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top, #111827 0, #020617 40%, #000 100%),
-        linear-gradient(to bottom, #020617, #020617);
-      color: var(--text);
+      padding: 0;
+      box-sizing: border-box;
     }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      background: #ffffff;
+      font-size: 16px;
+    }
+
+    h1 { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; line-height: 1.2; margin-bottom: 0.75rem; }
+    h2 { font-size: clamp(1.125rem, 3vw, 1.375rem); font-weight: 600; line-height: 1.3; margin-bottom: 0.625rem; }
+    p { font-size: 1rem; line-height: 1.65; margin-bottom: 1rem; color: #475569; }
+    ul { margin: 0.75rem 0 0 1.25rem; }
+    li { margin-bottom: 0.5rem; font-size: 0.9375rem; color: #475569; }
+
     a { color: inherit; text-decoration: none; }
+
     header {
-      position: sticky; top: 0; z-index: 40;
-      backdrop-filter: blur(16px);
-      background: linear-gradient(to bottom, rgba(3,7,18,0.95), rgba(3,7,18,0.6), transparent);
-      border-bottom: 1px solid rgba(148,163,184,0.18);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e2e8f0;
     }
+
     .nav {
-      max-width: 960px; margin: 0 auto; padding: 0.75rem 1.5rem;
-      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-      font-size: 0.9rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
-    .nav-left { display: flex; align-items: center; gap: 0.55rem; }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+
     .logo-dot {
-      width: 10px; height: 10px; border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, #38bdf8, #6366f1 40%, #0ea5e9);
-      box-shadow: 0 0 16px rgba(56, 189, 248, 0.9);
+      width: 8px;
+      height: 8px;
+      background: linear-gradient(135deg, #38bdf8, #2563eb);
+      border-radius: 50%;
     }
-    .name { font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.82rem; }
-    .nav-right { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .nav-link { color: var(--muted); }
-    .nav-link:hover { color: #e5e7eb; text-decoration: underline; text-underline-offset: 3px; }
 
-    main { max-width: 960px; margin: 0 auto; padding: 2.4rem 1.5rem 3rem; }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.875rem;
+      color: #64748b;
+    }
 
-    .eyebrow {
-      font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 0.6rem;
+    .nav-link:hover {
+      color: #3b82f6;
     }
-    h1 { font-size: clamp(1.9rem, 2.5vw + 1rem, 2.4rem); margin: 0 0 0.6rem; }
-    .subtitle {
-      font-size: 0.95rem; color: var(--muted); max-width: 38rem; line-height: 1.6;
-      margin-bottom: 1.4rem;
-    }
-    .meta-row {
-      display: flex; flex-wrap: wrap; gap: 0.6rem 1.3rem;
-      font-size: 0.8rem; color: var(--muted); margin-bottom: 2rem;
-    }
-    .meta-label { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.7rem; color: var(--muted); }
 
-    .grid { display: grid; gap: 1.1rem; }
-    @media (min-width: 768px) { .grid-2 { grid-template-columns: 1.6fr 1.2fr; } }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        padding: 2rem 1.25rem;
+      }
+    }
+
+    .label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #94a3b8;
+      margin-bottom: 0.5rem;
+    }
+
+    .intro {
+      max-width: 42rem;
+      margin-bottom: 2rem;
+    }
+
+    .meta-grid {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    @media (min-width: 640px) {
+      .meta-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+    }
+
+    .meta-item h3 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #94a3b8;
+      margin-bottom: 0.25rem;
+    }
+
+    .meta-item p {
+      font-size: 0.9375rem;
+      color: #1e293b;
+      margin: 0;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1.5fr 1fr;
+      }
+    }
 
     .card {
-      background: radial-gradient(circle at top left, rgba(37,99,235,0.16), transparent 55%),
-        linear-gradient(to bottom right, #020617, #020617);
-      border-radius: 1rem;
-      border: 1px solid rgba(148,163,184,0.22);
-      padding: 1rem 1rem 1rem;
+      padding: 1.75rem;
+      background: linear-gradient(to bottom right, #f8fafc, #ffffff);
+      border: 1px solid #e2e8f0;
+      border-radius: 0.875rem;
     }
-    h2 { font-size: 1.1rem; margin: 0 0 0.4rem; }
-    h3 { font-size: 0.96rem; margin: 0 0 0.3rem; }
-    p { font-size: 0.87rem; line-height: 1.6; color: var(--muted); margin: 0 0 0.6rem; }
-    ul { margin: 0.25rem 0 0.6rem 1.1rem; padding: 0; font-size: 0.86rem; color: var(--muted); }
-    li { margin-bottom: 0.25rem; }
+
+    .card h2 {
+      margin-bottom: 0.875rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.375rem 0.75rem;
+      background: #dbeafe;
+      border: 1px solid #3b82f6;
+      border-radius: 9999px;
+      font-size: 0.8125rem;
+      margin-bottom: 1rem;
+      color: #1e40af;
+      font-weight: 500;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      background: #2563eb;
+      border-radius: 50%;
+    }
 
     .tag-row {
-      display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.4rem;
-    }
-    .tag {
-      font-size: 0.72rem; padding: 0.22rem 0.5rem;
-      border-radius: 999px;
-      background: rgba(15,23,42,0.9);
-      border: 1px solid rgba(148,163,184,0.45);
-      color: #e5e7eb;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
     }
 
-    .pill {
-      display: inline-flex; align-items: center; gap: 0.35rem;
-      padding: 0.3rem 0.55rem; border-radius: 999px;
-      border: 1px solid rgba(56,189,248,0.8);
-      font-size: 0.75rem; color: #e5e7eb;
-      background: radial-gradient(circle at left, rgba(56,189,248,0.25), transparent 55%);
-      margin-bottom: 0.6rem;
+    .tag {
+      padding: 0.25rem 0.625rem;
+      font-size: 0.75rem;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 9999px;
+      color: #64748b;
     }
-    .dot { width: 6px; height: 6px; border-radius: 999px; background: #38bdf8; box-shadow: 0 0 8px rgba(56,189,248,0.9); }
 
     footer {
-      max-width: 960px; margin: 0 auto; padding: 0 1.5rem 2.4rem;
-      font-size: 0.78rem; color: var(--muted);
-      display: flex; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      font-size: 0.875rem;
+      color: #64748b;
+      border-top: 1px solid #e2e8f0;
     }
-    .footer-link { color: var(--muted); text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 2px; }
+
+    .footer-link {
+      color: #64748b;
+      transition: color 0.2s;
+    }
+
+    .footer-link:hover {
+      color: #3b82f6;
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="nav">
-      <div class="nav-left">
+    <nav class="nav">
+      <div class="nav-brand">
         <div class="logo-dot"></div>
-        <div class="name">Jake Riddell</div>
+        <span>Jake Riddell</span>
       </div>
-      <div class="nav-right">
-        <a href="index.html#projects" class="nav-link">← Back to Projects</a>
+      <div class="nav-links">
+        <a href="index.html#projects" class="nav-link">← Projects</a>
         <a href="index.html" class="nav-link">Home</a>
       </div>
-    </div>
+    </nav>
   </header>
 
   <main>
-    <div class="eyebrow">Case Study · Rogers</div>
+    <div class="label">Case Study · Rogers</div>
     <h1>Beyond the Seat – Extending the live arena experience</h1>
-    <p class="subtitle">
+    <p class="intro">
       Winning concept from the uXperience Design Jam with Rogers. Worked with a multidisciplinary team to
       imagine a connected in‑venue experience that uses Rogers technology to make every moment before,
-      during, and after the game feel more personal and memorable.[file:116][web:126]
+      during, and after the game feel more personal and memorable.
     </p>
 
-    <div class="meta-row">
-      <div>
-        <div class="meta-label">Role</div>
-        <div>UX design, brand strategy, storytelling, prototyping</div>
+    <div class="meta-grid">
+      <div class="meta-item">
+        <h3>Role</h3>
+        <p>UX design, brand strategy, storytelling, prototyping</p>
       </div>
-      <div>
-        <div class="meta-label">Team</div>
-        <div>Multidisciplinary student team · 200+ participants in jam</div>
+      <div class="meta-item">
+        <h3>Team</h3>
+        <p>Multidisciplinary student team · 200+ participants</p>
       </div>
-      <div>
-        <div class="meta-label">Outcome</div>
-        <div>Winning concept presented to panel of Rogers judges</div>
+      <div class="meta-item">
+        <h3>Outcome</h3>
+        <p>Winning concept presented to Rogers judges</p>
       </div>
     </div>
 
     <section class="grid grid-2">
       <article class="card">
-        <div class="pill"><span class="dot"></span><span>Problem & opportunity</span></div>
+        <div class="badge"><span class="dot"></span><span>Problem</span></div>
         <h2>How might we extend the game beyond the seat?</h2>
         <p>
-          Fans spend a lot of time around the game—arriving, meeting friends, finding food, sharing moments—
-          but most of the experience design focuses only on what happens on the ice or field.[file:116]
+          Fans spend a lot of time around the game—arriving, meeting friends, finding food—but most
+          experience design focuses only on what happens on the ice or field.
         </p>
         <p>
-          The challenge was to use Rogers technology to make the surrounding experience feel more connected,
-          more personal, and more worth talking about afterwards—without turning every interaction into an
-          ad or notification.[file:116]
+          The challenge: use Rogers technology to make the surrounding experience more connected and
+          personal, without turning every interaction into an ad.
         </p>
         <ul>
-          <li>Mapped the end‑to‑end journey from ticket purchase to post‑game reflection.</li>
-          <li>Highlighted friction points like confusion in the concourse, missed moments, and social
-            coordination issues.</li>
-          <li>Framed opportunities where lightweight, context‑aware touchpoints could add value.</li>
+          <li>Mapped the end‑to‑end journey from ticket purchase to post‑game reflection</li>
+          <li>Highlighted friction points like concourse confusion and missed moments</li>
+          <li>Framed opportunities for lightweight, context‑aware touchpoints</li>
         </ul>
       </article>
 
       <article class="card">
-        <h2>Constraints that shaped the solution</h2>
+        <h2>Constraints</h2>
         <ul>
-          <li>Must integrate in a believable way with existing Rogers infrastructure.</li>
-          <li>Has to work for first‑time fans and season ticket holders, across different comfort levels with
-            tech.</li>
-          <li>Should enhance the atmosphere in‑venue instead of pulling people out of the event.</li>
+          <li>Must integrate believably with existing Rogers infrastructure</li>
+          <li>Has to work for first‑time fans and season ticket holders</li>
+          <li>Should enhance the atmosphere, not pull people out of the event</li>
         </ul>
         <div class="tag-row">
           <span class="tag">Journey mapping</span>
           <span class="tag">Service design</span>
           <span class="tag">Systems thinking</span>
-          <span class="tag">Industry brief</span>
         </div>
       </article>
     </section>
 
     <section class="grid grid-2">
       <article class="card">
-        <div class="pill"><span class="dot"></span><span>Solution</span></div>
+        <div class="badge"><span class="dot"></span><span>Solution</span></div>
         <h2>A connected layer across the fan journey</h2>
         <p>
-          The concept introduced a “beyond the seat” layer that quietly supports fans as they navigate the
-          venue, discover relevant moments, and share them with others.[file:116]
+          The concept introduced a "beyond the seat" layer that quietly supports fans as they navigate the
+          venue, discover moments, and share them.
         </p>
         <ul>
-          <li>Contextual prompts for meetups and experiences based on where fans are and who they’re with.</li>
-          <li>Simple, glanceable UI patterns tuned for crowded, high‑stimulus environments.</li>
-          <li>Clear controls so fans can choose how much they want to interact.</li>
+          <li>Contextual prompts based on location and companions</li>
+          <li>Glanceable UI patterns tuned for crowded environments</li>
+          <li>Clear controls so fans choose how much to interact</li>
         </ul>
         <div class="tag-row">
           <span class="tag">Contextual UX</span>
@@ -207,13 +304,13 @@
       <article class="card">
         <h2>Prototype & storytelling</h2>
         <p>
-          The experience was brought to life in Figma as a sequence of key moments, paired with a narrative
-          that walked judges through the fan’s perspective first, then the technology behind it.[file:116]
+          Brought to life in Figma as a sequence of key moments, paired with a narrative that walked
+          judges through the fan's perspective first, then the technology.
         </p>
         <ul>
-          <li>Used scenarios to show how different fan types would experience the same touchpoints.</li>
-          <li>Focused the pitch on emotion and value before features.</li>
-          <li>Aligned visual language and motion with Rogers’ brand to keep it credible.</li>
+          <li>Used scenarios to show different fan types experiencing the same touchpoints</li>
+          <li>Focused the pitch on emotion and value before features</li>
+          <li>Aligned visual language with Rogers' brand</li>
         </ul>
         <div class="tag-row">
           <span class="tag">Figma prototyping</span>
@@ -224,26 +321,22 @@
     </section>
 
     <section class="card">
-      <div class="pill"><span class="dot"></span><span>Reflection & Futures Lab fit</span></div>
-      <h2>What this project says about AI × UX</h2>
+      <div class="badge"><span class="dot"></span><span>Reflection</span></div>
+      <h2>What this says about AI × UX</h2>
       <p>
-        While this brief wasn’t explicitly about AI, it trained the systems thinking that carries into
-        AI‑enabled experiences: understanding context, constraints, and what “good” looks like before
-        choosing any technology.[web:1][web:3]
+        While this brief wasn't explicitly about AI, it trained the systems thinking that carries into
+        AI‑enabled experiences: understanding context, constraints, and what "good" looks like before
+        choosing any technology.
       </p>
       <p>
-        For Futures Lab, this mindset is critical when deciding where AI belongs in a learning journey
-        (and where it doesn’t), how to design transparent interventions, and how to pitch experimental
-        ideas to real stakeholders.[web:1][web:4]
+        For Futures Lab, this mindset is critical when deciding where AI belongs in a learning journey,
+        how to design transparent interventions, and how to pitch experimental ideas to real stakeholders.
       </p>
     </section>
   </main>
 
   <footer>
-    <span>© 2025 · Jake Riddell</span>
-    <div>
-      <a href="index.html#projects" class="footer-link">Back to main Projects</a>
-    </div>
+    <a href="index.html#projects" class="footer-link">← Back to Projects</a>
   </footer>
 </body>
 </html>
