@@ -1,234 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Sun Life – Financial Literacy Tool · Jake Riddell</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    /* Same base styling & blue theme as Rogers page */
-    :root {
-      --bg: #020617;
-      --card: #0b1020;
-      --accent: #7c3aed;
-      --text: #f9fafb;
-      --muted: #9ca3af;
-    }
-    * { box-sizing: border-box; scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top, #111827 0, #020617 40%, #000 100%),
-        linear-gradient(to bottom, #020617, #020617);
-      color: var(--text);
-    }
-    a { color: inherit; text-decoration: none; }
-    header {
-      position: sticky; top: 0; z-index: 40;
-      backdrop-filter: blur(16px);
-      background: linear-gradient(to bottom, rgba(3,7,18,0.95), rgba(3,7,18,0.6), transparent);
-      border-bottom: 1px solid rgba(148,163,184,0.18);
-    }
-    .nav {
-      max-width: 960px; margin: 0 auto; padding: 0.75rem 1.5rem;
-      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-      font-size: 0.9rem;
-    }
-    .nav-left { display: flex; align-items: center; gap: 0.55rem; }
-    .logo-dot {
-      width: 10px; height: 10px; border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, #eab308, #facc15 40%, #38bdf8);
-      box-shadow: 0 0 16px rgba(250, 204, 21, 0.8);
-    }
-    .name { font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.82rem; }
-    .nav-right { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .nav-link { color: var(--muted); }
-    .nav-link:hover { color: #e5e7eb; text-decoration: underline; text-underline-offset: 3px; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunlife - Fund Forward | Jake Riddell</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    main { max-width: 960px; margin: 0 auto; padding: 2.4rem 1.5rem 3rem; }
-    .eyebrow { font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; }
-    h1 { font-size: clamp(1.9rem, 2.5vw + 1rem, 2.4rem); margin: 0 0 0.6rem; }
-    .subtitle { font-size: 0.95rem; color: var(--muted); max-width: 38rem; line-height: 1.6; margin-bottom: 1.4rem; }
-    .meta-row { display: flex; flex-wrap: wrap; gap: 0.6rem 1.3rem; font-size: 0.8rem; color: var(--muted); margin-bottom: 2rem; }
-    .meta-label { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.7rem; color: var(--muted); }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+        }
 
-    .grid { display: grid; gap: 1.1rem; }
-    @media (min-width: 768px) { .grid-2 { grid-template-columns: 1.6fr 1.2fr; } }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
 
-    .card {
-      background: radial-gradient(circle at top left, rgba(234,179,8,0.18), transparent 55%),
-        linear-gradient(to bottom right, #020617, #020617);
-      border-radius: 1rem;
-      border: 1px solid rgba(148,163,184,0.24);
-      padding: 1rem 1rem 1rem;
-    }
-    h2 { font-size: 1.1rem; margin: 0 0 0.4rem; }
-    h3 { font-size: 0.96rem; margin: 0 0 0.3rem; }
-    p { font-size: 0.87rem; line-height: 1.6; color: var(--muted); margin: 0 0 0.6rem; }
-    ul { margin: 0.25rem 0 0.6rem 1.1rem; padding: 0; font-size: 0.86rem; color: var(--muted); }
-    li { margin-bottom: 0.25rem; }
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 400;
+            color: #1a1a1a;
+        }
 
-    .tag-row { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.4rem; }
-    .tag {
-      font-size: 0.72rem; padding: 0.22rem 0.5rem;
-      border-radius: 999px;
-      background: rgba(15,23,42,0.9);
-      border: 1px solid rgba(148,163,184,0.45);
-      color: #e5e7eb;
-    }
+        .subtitle {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 30px;
+        }
 
-    .pill {
-      display: inline-flex; align-items: center; gap: 0.35rem;
-      padding: 0.3rem 0.55rem; border-radius: 999px;
-      border: 1px solid rgba(250,204,21,0.85);
-      font-size: 0.75rem; color: #e5e7eb;
-      background: radial-gradient(circle at left, rgba(250,204,21,0.25), transparent 55%);
-      margin-bottom: 0.6rem;
-    }
-    .dot { width: 6px; height: 6px; border-radius: 999px; background: #facc15; box-shadow: 0 0 8px rgba(250,204,21,0.9); }
+        .intro-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+            align-items: start;
+        }
 
-    footer {
-      max-width: 960px; margin: 0 auto; padding: 0 1.5rem 2.4rem;
-      font-size: 0.78rem; color: var(--muted);
-      display: flex; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap;
-    }
-    .footer-link { color: var(--muted); text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 2px; }
-  </style>
+        .intro-text p {
+            font-size: 1em;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .project-details {
+            font-size: 0.95em;
+            line-height: 2;
+        }
+
+        .project-details strong {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        h2 {
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+
+        .section-content {
+            margin-bottom: 60px;
+        }
+
+        .section-content p {
+            font-size: 1em;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .logo-center {
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .logo-center img {
+            width: 150px;
+            height: auto;
+        }
+
+        .persona-section {
+            margin-bottom: 80px;
+        }
+
+        .persona-intro {
+            margin-bottom: 30px;
+        }
+
+        .persona-intro h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .persona-intro p {
+            font-size: 1em;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .requirement-column ul {
+            list-style: none;
+        }
+
+        .requirement-column li {
+            font-size: 0.95em;
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #444;
+        }
+
+        .requirement-column li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+            margin-bottom: 80px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .solution-section {
+            margin-bottom: 60px;
+        }
+
+        .solution-content p {
+            font-size: 1em;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 968px) {
+            .intro-section {
+                grid-template-columns: 1fr;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .requirements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="nav">
-      <div class="nav-left">
-        <div class="logo-dot"></div>
-        <div class="name">Jake Riddell</div>
-      </div>
-      <div class="nav-right">
-        <a href="index.html#projects" class="nav-link">← Back to Projects</a>
-        <a href="index.html" class="nav-link">Home</a>
-      </div>
-    </div>
-  </header>
+    <div class="container">
+        <h1>Sunlife - Fund Forward</h1>
+        <p class="subtitle">First place at the uXperience Design Jam</p>
 
-  <main>
-    <div class="eyebrow">Case Study · Sun Life</div>
-    <h1>Designing a financial literacy tool that feels like a coach, not a lecture</h1>
-    <p class="subtitle">
-      Winning uXperience Design Jam project for Sun Life. Our team created a concept that helps young
-      Canadians build financial confidence by meeting them where they are, tailoring education to their
-      goals, and keeping the experience approachable.[file:116][web:126]
-    </p>
-
-    <div class="meta-row">
-      <div>
-        <div class="meta-label">Role</div>
-        <div>UX design, content framing, interaction design, pitching</div>
-      </div>
-      <div>
-        <div class="meta-label">Team</div>
-        <div>Multidisciplinary student team · 200+ participants in jam</div>
-      </div>
-      <div>
-        <div class="meta-label">Outcome</div>
-        <div>Winning concept presented to Sun Life judges</div>
-      </div>
-    </div>
-
-    <section class="grid grid-2">
-      <article class="card">
-        <div class="pill"><span class="dot"></span><span>Problem & opportunity</span></div>
-        <h2>Financial literacy is high stakes and emotional</h2>
-        <p>
-          Many young Canadians know that money decisions matter, but the learning resources they find are
-          often abstract, overwhelming, or misaligned with their actual goals.[file:116]
-        </p>
-        <p>
-          The challenge: design an experience that supports real decisions—like saving, investing, or paying
-          off debt—without drowning people in jargon or removing their sense of agency.[file:116]
-        </p>
-        <ul>
-          <li>Identified key mindsets: anxious, curious, confident but under‑informed.</li>
-          <li>Mapped scenarios around specific goals instead of generic “financial literacy”.</li>
-          <li>Looked for moments where small nudges and clear framing could unlock action.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h2>Design principles</h2>
-        <ul>
-          <li><strong>Goal‑first:</strong> Start from what people care about (e.g., “I want to travel”,
-            “I want to pay off this loan”), not from products.</li>
-          <li><strong>Plain language:</strong> Explain concepts with straightforward visuals and copy.</li>
-          <li><strong>Coaching, not commands:</strong> Make recommendations transparent and editable.</li>
-        </ul>
-        <div class="tag-row">
-          <span class="tag">Behavioural framing</span>
-          <span class="tag">Information architecture</span>
-          <span class="tag">Trust & transparency</span>
+        <div class="intro-section">
+            <div class="intro-text">
+                <p>Myself and a team of five students spent one day innovating a way to promote financial literacy for young adults.</p>
+                
+                <div class="project-details">
+                    <p><strong>Role:</strong> UX Designer</p>
+                    <p><strong>Software:</strong> Figma, Adobe</p>
+                    <p><strong>Deliverables:</strong> Mid-Fidelity Website and Brand Strategy</p>
+                    <p><strong>Time:</strong> 1 Day</p>
+                    <p><strong>Team:</strong> 5 students</p>
+                </div>
+            </div>
+            
+            <div class="hero-image-container">
+                <img src="sunlife-hero.jpg" alt="Fund Forward Website Mockup" class="hero-image">
+            </div>
         </div>
-      </article>
-    </section>
 
-    <section class="grid grid-2">
-      <article class="card">
-        <div class="pill"><span class="dot"></span><span>Solution</span></div>
-        <h2>Goal‑based flows and tailored learning paths</h2>
-        <p>
-          The concept used a simple, branching flow: pick a goal, answer a few concrete questions, then get
-          a path that mixes short lessons, quick checks, and decision points.[file:116]
-        </p>
-        <ul>
-          <li>Each step made only one decision at a time visible.</li>
-          <li>Progress indicators focused on “clarity gained”, not just completion.</li>
-          <li>Visual metaphors helped make abstract ideas like risk and time horizon concrete.</li>
-        </ul>
-        <div class="tag-row">
-          <span class="tag">Goal‑oriented UX</span>
-          <span class="tag">Content chunking</span>
-          <span class="tag">Visual explanation</span>
+        <section class="section-content">
+            <h2>What we solved</h2>
+            <p>Our task was to design a solution for youths that want to get a start in financial literacy. Our research found that two of the biggest barriers are a lack of knowledge and the over complication of initial steps. Young adults under utilize the resources available and get stuck at the first step because they do not know where they stand financially.</p>
+        </section>
+
+        <div class="logo-center">
+            <img src="fund-forward-logo.jpg" alt="Fund Forward Logo">
         </div>
-      </article>
 
-      <article class="card">
-        <h2>Prototype & pitch</h2>
-        <p>
-          The Figma prototype walked judges through a representative user journey, showing how the tool
-          would adapt as a user’s understanding and confidence grew.[file:116]
-        </p>
-        <ul>
-          <li>Storyboarded the before/after of someone avoiding decisions vs. taking informed action.</li>
-          <li>Aligned the look and feel with Sun Life’s emphasis on trust and long‑term relationships.</li>
-          <li>Used the pitch to highlight how this could plug into existing digital ecosystems.</li>
-        </ul>
-        <div class="tag-row">
-          <span class="tag">Figma prototyping</span>
-          <span class="tag">Narrative design</span>
-          <span class="tag">Stakeholder alignment</span>
+        <section class="persona-section">
+            <h2>Who we solved for</h2>
+            
+            <div class="persona-intro">
+                <h3>Meet Emily Turner!</h3>
+                <p>Emily is a 29 year old software developer living in Toronto with her spouse. She is focused on saving for a home and preparing for future family expenses. Although comfortable with technology, Emily finds it challenging to prioritize her financial goals especially when planning for long term commitments like retirement.</p>
+            </div>
+
+            <h3 style="margin-bottom: 20px; font-size: 1.1em;">Emily's user requirements</h3>
+            
+            <div class="requirements-grid">
+                <div class="requirement-column">
+                    <ul>
+                        <li>Needs to balance multiple goals</li>
+                        <li>Wants to understand the impact of major life events</li>
+                    </ul>
+                </div>
+                <div class="requirement-column">
+                    <ul>
+                        <li>Needs to optimize savings and investments</li>
+                        <li>Worries about economic stability</li>
+                    </ul>
+                </div>
+                <div class="requirement-column">
+                    <ul>
+                        <li>Struggles to prioritize the future</li>
+                        <li>Needs concise planning</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="image-grid">
+            <img src="persona-card.jpg" alt="Emily Turner Persona Card">
+            <img src="goal-setting.jpg" alt="Set Your Goals Interface">
         </div>
-      </article>
-    </section>
 
-    <section class="card">
-      <div class="pill"><span class="dot"></span><span>Reflection & Futures Lab fit</span></div>
-      <h2>From financial literacy to learning re‑imagined</h2>
-      <p>
-        This project sharpened a key Futures Lab skill: structuring complex, high‑stakes topics into
-        clear, learner‑centered journeys that could later be supported by AI without removing human
-        judgment.[web:1][web:3]
-      </p>
-      <p>
-        The same patterns—goal‑based flows, transparent reasoning, and gentle coaching—translate directly
-        to AI‑supported learning tools where models help surface insights, but students stay in control of
-        decisions.[web:1][web:4]
-      </p>
-    </section>
-  </main>
+        <section class="solution-section">
+            <h2>Our Solution</h2>
+            <div class="solution-content">
+                <p>Through the research insights provided by Sunlife, internal innovation and external mentoring, we created <strong>Fund Forward</strong>. Fund Forward is a dynamic look forward into your financial future. We visualize the user end goal using a graph that highlights life milestones and there financial impact. Fund Forward acts as an infographic you can explore to learn more about specific financial decisions.</p>
+            </div>
+        </section>
 
-  <footer>
-    <span>© 2025 · Jake Riddell</span>
-    <div>
-      <a href="index.html#projects" class="footer-link">Back to main Projects</a>
+        <div class="image-grid">
+            <img src="graph-1.jpg" alt="Fund Forward Financial Graph 1">
+            <img src="graph-2.jpg" alt="Fund Forward Financial Graph 2">
+        </div>
     </div>
-  </footer>
 </body>
 </html>
