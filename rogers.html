@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rogers - Beyond the Seat | Jake Riddell</title>
+    <title>Rogers BTS | Jake Riddell</title>
     <style>
         * {
             margin: 0;
@@ -15,225 +15,250 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #d41367 0%, #a00d4f 100%);
-            color: white;
-            text-align: center;
-            padding: 80px 20px 60px;
-        }
-
-        .hero h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .subtitle {
-            font-size: 1.3em;
-            opacity: 0.95;
-            margin: 15px 0 25px;
-            font-weight: 500;
-        }
-
-        .hero p:last-child {
-            font-size: 1.1em;
-            max-width: 800px;
-            margin: 0 auto;
-            opacity: 0.9;
+            background: #fafafa;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 60px 40px;
         }
 
-        section {
-            padding: 60px 0;
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 400;
+            color: #1a1a1a;
         }
 
-        section h2 {
-            font-size: 2.2em;
-            margin-bottom: 25px;
-            color: #222;
+        .subtitle {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 30px;
         }
 
-        section p {
-            font-size: 1.1em;
+        .intro-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+            align-items: start;
+        }
+
+        .intro-text p {
+            font-size: 1em;
             line-height: 1.8;
-            color: #555;
+            color: #444;
             margin-bottom: 20px;
         }
 
-        .project-overview {
-            background: #f8f9fa;
+        .project-details {
+            font-size: 0.95em;
+            line-height: 2;
         }
 
-        .my-role ul {
+        .project-details strong {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        h2 {
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+
+        .section-content {
+            margin-bottom: 60px;
+        }
+
+        .section-content p {
+            font-size: 1em;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+            margin-bottom: 80px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .persona-section {
+            margin-bottom: 80px;
+        }
+
+        .persona-intro {
+            margin-bottom: 30px;
+        }
+
+        .persona-intro h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .persona-intro p {
+            font-size: 1em;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .requirement-column ul {
             list-style: none;
-            margin-top: 20px;
         }
 
-        .my-role li {
-            font-size: 1.05em;
-            padding: 15px 0 15px 40px;
+        .requirement-column li {
+            font-size: 0.95em;
+            padding: 8px 0;
+            padding-left: 20px;
             position: relative;
             color: #444;
-            line-height: 1.7;
         }
 
-        .my-role li:before {
-            content: "→";
+        .requirement-column li:before {
+            content: "•";
             position: absolute;
-            left: 10px;
-            color: #d41367;
+            left: 0;
+            color: #333;
             font-weight: bold;
-            font-size: 1.3em;
         }
 
-        .solution {
-            background: #ffffff;
+        .solution-section {
+            margin-bottom: 60px;
         }
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .feature {
-            padding: 30px;
-            border-left: 4px solid #d41367;
-            background: #f8f9fa;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .feature:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .feature h3 {
-            color: #d41367;
-            font-size: 1.3em;
-            margin-bottom: 12px;
-        }
-
-        .feature p {
+        .solution-content p {
             font-size: 1em;
-            margin: 0;
-            color: #666;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 20px;
         }
 
-        .impact {
-            background: #f8f9fa;
-            text-align: center;
-        }
-
-        .result-highlight {
-            background: linear-gradient(135deg, #d41367 0%, #a00d4f 100%);
-            color: white;
-            padding: 30px 40px;
-            border-radius: 12px;
-            margin-top: 30px;
-            font-size: 1.2em;
-            font-weight: 600;
-            box-shadow: 0 10px 40px rgba(212, 19, 103, 0.3);
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2em;
-            }
-
-            .subtitle {
-                font-size: 1.1em;
-            }
-
-            section h2 {
-                font-size: 1.8em;
-            }
-
-            .features {
+        @media (max-width: 968px) {
+            .intro-section {
                 grid-template-columns: 1fr;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .requirements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 1.8em;
             }
         }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <h1>Rogers - Beyond the Seat</h1>
-        <p class="subtitle">uXperience Design Jam Winner | October 2024</p>
-        <p>Competed against 200+ students at the University of Waterloo Stratford School to redesign Rogers' Beyond the Seat loyalty program.</p>
-    </div>
+    <div class="container">
+        <h1>Rogers BTS</h1>
+        <p class="subtitle">First place at the uXperience Design Jam</p>
 
-    <section class="project-overview">
-        <div class="container">
-            <h2>The Challenge</h2>
-            <p>Rogers' Beyond the Seat loyalty program faced a critical 98% customer awareness gap despite years of rollout. The challenge was to design an outreach and brand strategy to increase engagement and visibility for this rewards program that provides exclusive access to sports and entertainment experiences.</p>
+        <div class="intro-section">
+            <div class="intro-text">
+                <p>Myself and a team of five students spent one day innovating a way to promote awareness and value for the Rogers Beyond The Seat loyalty program.</p>
+                
+                <div class="project-details">
+                    <p><strong>Role:</strong> UX Designer</p>
+                    <p><strong>Software:</strong> Figma, Adobe</p>
+                    <p><strong>Deliverables:</strong> Mid-Fidelity app and Brand Strategy</p>
+                    <p><strong>Time:</strong> 1 Day</p>
+                    <p><strong>Team:</strong> 5 students</p>
+                </div>
+            </div>
+            
+            <div class="hero-image-container">
+                <img src="hero-image.jpg" alt="Rogers BTS App Mockups" class="hero-image">
+            </div>
         </div>
-    </section>
 
-    <section class="my-role">
-        <div class="container">
-            <h2>My Role & Contributions</h2>
-            <ul>
-                <li>Probed questions to Rogers mentors to understand business constraints and opportunities</li>
-                <li>Proposed using the design thinking framework with user personas to structure our rapid design process</li>
-                <li>Brainstormed and developed user personas with team members based on secondary research and mentor interviews</li>
-                <li>Analyzed three external loyalty program case studies to identify best practices</li>
-                <li>Integrated Rogers emerging technologies including 5G, Internet of Things (IoT), and augmented reality (AR) into the solution</li>
-                <li>Created a Figma prototype and brand strategy that successfully pitched to 10 Rogers judges</li>
-            </ul>
+        <section class="section-content">
+            <h2>What we solved</h2>
+            <p>Rogers launched <em>Beyond the Seats</em> to strengthen customer loyalty through behavioural insights, recognizing that 63% of consumers are influenced by loyalty programs when making purchasing decisions. However, after several years in market, 98% of customers did not take advantage of Beyond The Seats.</p>
+            <p>Our task was to create a deliverable that leverages Rogers 5G technology and entertainment positioning to promote engagement. We then built a brand strategy that improves the visibility and loyalty in the program.</p>
+        </section>
+
+        <div class="image-grid">
+            <img src="app-screen-1.jpg" alt="Rogers BTS App Interface 1">
+            <img src="app-screen-2.jpg" alt="Rogers BTS App Interface 2">
         </div>
-    </section>
 
-    <section class="solution">
-        <div class="container">
+        <section class="persona-section">
+            <h2>Who we solved for</h2>
+            
+            <div class="persona-intro">
+                <h3>Meet Walter Smith!</h3>
+                <p>A 56 year old married dad of two that enjoys golfing and a good filet mignon. Walter values exclusivity, family, quality and comfort. Walter appreciates a VIP experience that he can share with his family and is willing to pay for it.</p>
+            </div>
+
+            <h3 style="margin-bottom: 20px; font-size: 1.1em;">Walter's user requirements</h3>
+            
+            <div class="requirements-grid">
+                <div class="requirement-column">
+                    <ul>
+                        <li>Personalization</li>
+                        <li>Current 5G Tech Access</li>
+                    </ul>
+                </div>
+                <div class="requirement-column">
+                    <ul>
+                        <li>Family Plan/Package</li>
+                        <li>Future 5G Tech Access</li>
+                    </ul>
+                </div>
+                <div class="requirement-column">
+                    <ul>
+                        <li>Enhanced Customer Experience</li>
+                        <li>Customer Appreciation Perks</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="image-grid">
+            <img src="app-screen-3.jpg" alt="Rogers BTS App Interface 3">
+            <img src="app-screen-4.jpg" alt="Rogers BTS App Interface 4">
+        </div>
+
+        <section class="solution-section">
             <h2>Our Solution</h2>
-            <p>We developed a personalized, gamified mobile app that centralizes reward access, tier upgrades, and community-driven features for Rogers customers. Key features included:</p>
-            
-            <div class="features">
-                <div class="feature">
-                    <h3>Tiered Exclusivity System</h3>
-                    <p>Reward loyalty and drive continued engagement through progressive benefits</p>
-                </div>
-                
-                <div class="feature">
-                    <h3>Simplified User Experience</h3>
-                    <p>Inspired by the most effective loyalty models in the market</p>
-                </div>
-                
-                <div class="feature">
-                    <h3>Gamification Elements</h3>
-                    <p>Build community among Rogers customers through interactive features</p>
-                </div>
-                
-                <div class="feature">
-                    <h3>Strategic Outreach Initiatives</h3>
-                    <p>Improve visibility in local markets with targeted campaigns</p>
-                </div>
-                
-                <div class="feature">
-                    <h3>Mid-Fidelity Prototype</h3>
-                    <p>UX/UI prototype highlighting key features tailored to our user persona</p>
-                </div>
+            <div class="solution-content">
+                <p>Through the research insights provided by Rogers, internal innovation and external mentoring, we created the <strong>Rogers BTS app</strong>. A two tiered experience that maintains Rogers current offerings and extended perks to premium and family plan customers. The VIP tier offers premium perks, spending experiences and enhanced tech. The BTS app ensures customer engagement and satisfaction through a gamified and community experience that cares for its users.</p>
             </div>
-        </div>
-    </section>
-
-    <section class="impact">
-        <div class="container">
-            <h2>Impact</h2>
-            <p>We reimagined brand loyalty through emotional connection, personalization, and community engagement—shifting Beyond the Seat from a transactional rewards system to a lasting, Canadian loyalty experience.</p>
-            
-            <div class="result-highlight">
-                Our solution earned first place from Rogers' judges at the uXperience Design Jam
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 </body>
 </html>
