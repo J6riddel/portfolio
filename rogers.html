@@ -1,342 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Rogers – Beyond the Seat · Jake Riddell</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rogers - Beyond the Seat | Jake Riddell</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    html {
-      scroll-behavior: smooth;
-    }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.6;
-      color: #1e293b;
-      background: #ffffff;
-      font-size: 16px;
-    }
+        .hero {
+            background: linear-gradient(135deg, #d41367 0%, #a00d4f 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px 60px;
+        }
 
-    h1 { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; line-height: 1.2; margin-bottom: 0.75rem; }
-    h2 { font-size: clamp(1.125rem, 3vw, 1.375rem); font-weight: 600; line-height: 1.3; margin-bottom: 0.625rem; }
-    p { font-size: 1rem; line-height: 1.65; margin-bottom: 1rem; color: #475569; }
-    ul { margin: 0.75rem 0 0 1.25rem; }
-    li { margin-bottom: 0.5rem; font-size: 0.9375rem; color: #475569; }
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
 
-    a { color: inherit; text-decoration: none; }
+        .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            margin: 15px 0 25px;
+            font-weight: 500;
+        }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #e2e8f0;
-    }
+        .hero p:last-child {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
 
-    .nav {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-weight: 600;
-      font-size: 0.875rem;
-    }
+        section {
+            padding: 60px 0;
+        }
 
-    .logo-dot {
-      width: 8px;
-      height: 8px;
-      background: linear-gradient(135deg, #38bdf8, #2563eb);
-      border-radius: 50%;
-    }
+        section h2 {
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            color: #222;
+        }
 
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      font-size: 0.875rem;
-      color: #64748b;
-    }
+        section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
 
-    .nav-link:hover {
-      color: #3b82f6;
-    }
+        .project-overview {
+            background: #f8f9fa;
+        }
 
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem;
-    }
+        .my-role ul {
+            list-style: none;
+            margin-top: 20px;
+        }
 
-    @media (max-width: 768px) {
-      main {
-        padding: 2rem 1.25rem;
-      }
-    }
+        .my-role li {
+            font-size: 1.05em;
+            padding: 15px 0 15px 40px;
+            position: relative;
+            color: #444;
+            line-height: 1.7;
+        }
 
-    .label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #94a3b8;
-      margin-bottom: 0.5rem;
-    }
+        .my-role li:before {
+            content: "→";
+            position: absolute;
+            left: 10px;
+            color: #d41367;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
 
-    .intro {
-      max-width: 42rem;
-      margin-bottom: 2rem;
-    }
+        .solution {
+            background: #ffffff;
+        }
 
-    .meta-grid {
-      display: grid;
-      gap: 1rem;
-      margin-bottom: 2.5rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid #e2e8f0;
-    }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
 
-    @media (min-width: 640px) {
-      .meta-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      }
-    }
+        .feature {
+            padding: 30px;
+            border-left: 4px solid #d41367;
+            background: #f8f9fa;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
 
-    .meta-item h3 {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #94a3b8;
-      margin-bottom: 0.25rem;
-    }
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
 
-    .meta-item p {
-      font-size: 0.9375rem;
-      color: #1e293b;
-      margin: 0;
-    }
+        .feature h3 {
+            color: #d41367;
+            font-size: 1.3em;
+            margin-bottom: 12px;
+        }
 
-    .grid {
-      display: grid;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
+        .feature p {
+            font-size: 1em;
+            margin: 0;
+            color: #666;
+        }
 
-    @media (min-width: 768px) {
-      .grid-2 {
-        grid-template-columns: 1.5fr 1fr;
-      }
-    }
+        .impact {
+            background: #f8f9fa;
+            text-align: center;
+        }
 
-    .card {
-      padding: 1.75rem;
-      background: linear-gradient(to bottom right, #f8fafc, #ffffff);
-      border: 1px solid #e2e8f0;
-      border-radius: 0.875rem;
-    }
+        .result-highlight {
+            background: linear-gradient(135deg, #d41367 0%, #a00d4f 100%);
+            color: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            margin-top: 30px;
+            font-size: 1.2em;
+            font-weight: 600;
+            box-shadow: 0 10px 40px rgba(212, 19, 103, 0.3);
+        }
 
-    .card h2 {
-      margin-bottom: 0.875rem;
-    }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.375rem;
-      padding: 0.375rem 0.75rem;
-      background: #dbeafe;
-      border: 1px solid #3b82f6;
-      border-radius: 9999px;
-      font-size: 0.8125rem;
-      margin-bottom: 1rem;
-      color: #1e40af;
-      font-weight: 500;
-    }
+            .subtitle {
+                font-size: 1.1em;
+            }
 
-    .dot {
-      width: 6px;
-      height: 6px;
-      background: #2563eb;
-      border-radius: 50%;
-    }
+            section h2 {
+                font-size: 1.8em;
+            }
 
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-
-    .tag {
-      padding: 0.25rem 0.625rem;
-      font-size: 0.75rem;
-      background: #ffffff;
-      border: 1px solid #cbd5e1;
-      border-radius: 9999px;
-      color: #64748b;
-    }
-
-    footer {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
-      font-size: 0.875rem;
-      color: #64748b;
-      border-top: 1px solid #e2e8f0;
-    }
-
-    .footer-link {
-      color: #64748b;
-      transition: color 0.2s;
-    }
-
-    .footer-link:hover {
-      color: #3b82f6;
-    }
-  </style>
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <nav class="nav">
-      <div class="nav-brand">
-        <div class="logo-dot"></div>
-        <span>Jake Riddell</span>
-      </div>
-      <div class="nav-links">
-        <a href="index.html#projects" class="nav-link">← Projects</a>
-        <a href="index.html" class="nav-link">Home</a>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <div class="label">Case Study · Rogers</div>
-    <h1>Beyond the Seat – Extending the live arena experience</h1>
-    <p class="intro">
-      Winning concept from the uXperience Design Jam with Rogers. Worked with a multidisciplinary team to
-      imagine a connected in‑venue experience that uses Rogers technology to make every moment before,
-      during, and after the game feel more personal and memorable.
-    </p>
-
-    <div class="meta-grid">
-      <div class="meta-item">
-        <h3>Role</h3>
-        <p>UX design, brand strategy, storytelling, prototyping</p>
-      </div>
-      <div class="meta-item">
-        <h3>Team</h3>
-        <p>Multidisciplinary student team · 200+ participants</p>
-      </div>
-      <div class="meta-item">
-        <h3>Outcome</h3>
-        <p>Winning concept presented to Rogers judges</p>
-      </div>
+    <div class="hero">
+        <h1>Rogers - Beyond the Seat</h1>
+        <p class="subtitle">uXperience Design Jam Winner | October 2024</p>
+        <p>Competed against 200+ students at the University of Waterloo Stratford School to redesign Rogers' Beyond the Seat loyalty program.</p>
     </div>
 
-    <section class="grid grid-2">
-      <article class="card">
-        <div class="badge"><span class="dot"></span><span>Problem</span></div>
-        <h2>How might we extend the game beyond the seat?</h2>
-        <p>
-          Fans spend a lot of time around the game—arriving, meeting friends, finding food—but most
-          experience design focuses only on what happens on the ice or field.
-        </p>
-        <p>
-          The challenge: use Rogers technology to make the surrounding experience more connected and
-          personal, without turning every interaction into an ad.
-        </p>
-        <ul>
-          <li>Mapped the end‑to‑end journey from ticket purchase to post‑game reflection</li>
-          <li>Highlighted friction points like concourse confusion and missed moments</li>
-          <li>Framed opportunities for lightweight, context‑aware touchpoints</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h2>Constraints</h2>
-        <ul>
-          <li>Must integrate believably with existing Rogers infrastructure</li>
-          <li>Has to work for first‑time fans and season ticket holders</li>
-          <li>Should enhance the atmosphere, not pull people out of the event</li>
-        </ul>
-        <div class="tag-row">
-          <span class="tag">Journey mapping</span>
-          <span class="tag">Service design</span>
-          <span class="tag">Systems thinking</span>
+    <section class="project-overview">
+        <div class="container">
+            <h2>The Challenge</h2>
+            <p>Rogers' Beyond the Seat loyalty program faced a critical 98% customer awareness gap despite years of rollout. The challenge was to design an outreach and brand strategy to increase engagement and visibility for this rewards program that provides exclusive access to sports and entertainment experiences.</p>
         </div>
-      </article>
     </section>
 
-    <section class="grid grid-2">
-      <article class="card">
-        <div class="badge"><span class="dot"></span><span>Solution</span></div>
-        <h2>A connected layer across the fan journey</h2>
-        <p>
-          The concept introduced a "beyond the seat" layer that quietly supports fans as they navigate the
-          venue, discover moments, and share them.
-        </p>
-        <ul>
-          <li>Contextual prompts based on location and companions</li>
-          <li>Glanceable UI patterns tuned for crowded environments</li>
-          <li>Clear controls so fans choose how much to interact</li>
-        </ul>
-        <div class="tag-row">
-          <span class="tag">Contextual UX</span>
-          <span class="tag">Micro‑interactions</span>
-          <span class="tag">Information hierarchy</span>
+    <section class="my-role">
+        <div class="container">
+            <h2>My Role & Contributions</h2>
+            <ul>
+                <li>Probed questions to Rogers mentors to understand business constraints and opportunities</li>
+                <li>Proposed using the design thinking framework with user personas to structure our rapid design process</li>
+                <li>Brainstormed and developed user personas with team members based on secondary research and mentor interviews</li>
+                <li>Analyzed three external loyalty program case studies to identify best practices</li>
+                <li>Integrated Rogers emerging technologies including 5G, Internet of Things (IoT), and augmented reality (AR) into the solution</li>
+                <li>Created a Figma prototype and brand strategy that successfully pitched to 10 Rogers judges</li>
+            </ul>
         </div>
-      </article>
-
-      <article class="card">
-        <h2>Prototype & storytelling</h2>
-        <p>
-          Brought to life in Figma as a sequence of key moments, paired with a narrative that walked
-          judges through the fan's perspective first, then the technology.
-        </p>
-        <ul>
-          <li>Used scenarios to show different fan types experiencing the same touchpoints</li>
-          <li>Focused the pitch on emotion and value before features</li>
-          <li>Aligned visual language with Rogers' brand</li>
-        </ul>
-        <div class="tag-row">
-          <span class="tag">Figma prototyping</span>
-          <span class="tag">Pitch design</span>
-          <span class="tag">Story arcs</span>
-        </div>
-      </article>
     </section>
 
-    <section class="card">
-      <div class="badge"><span class="dot"></span><span>Reflection</span></div>
-      <h2>What this says about AI × UX</h2>
-      <p>
-        While this brief wasn't explicitly about AI, it trained the systems thinking that carries into
-        AI‑enabled experiences: understanding context, constraints, and what "good" looks like before
-        choosing any technology.
-      </p>
-      <p>
-        For Futures Lab, this mindset is critical when deciding where AI belongs in a learning journey,
-        how to design transparent interventions, and how to pitch experimental ideas to real stakeholders.
-      </p>
+    <section class="solution">
+        <div class="container">
+            <h2>Our Solution</h2>
+            <p>We developed a personalized, gamified mobile app that centralizes reward access, tier upgrades, and community-driven features for Rogers customers. Key features included:</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>Tiered Exclusivity System</h3>
+                    <p>Reward loyalty and drive continued engagement through progressive benefits</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>Simplified User Experience</h3>
+                    <p>Inspired by the most effective loyalty models in the market</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>Gamification Elements</h3>
+                    <p>Build community among Rogers customers through interactive features</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>Strategic Outreach Initiatives</h3>
+                    <p>Improve visibility in local markets with targeted campaigns</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>Mid-Fidelity Prototype</h3>
+                    <p>UX/UI prototype highlighting key features tailored to our user persona</p>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
 
-  <footer>
-    <a href="index.html#projects" class="footer-link">← Back to Projects</a>
-  </footer>
+    <section class="impact">
+        <div class="container">
+            <h2>Impact</h2>
+            <p>We reimagined brand loyalty through emotional connection, personalization, and community engagement—shifting Beyond the Seat from a transactional rewards system to a lasting, Canadian loyalty experience.</p>
+            
+            <div class="result-highlight">
+                Our solution earned first place from Rogers' judges at the uXperience Design Jam
+            </div>
+        </div>
+    </section>
 </body>
 </html>
