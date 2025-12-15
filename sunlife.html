@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sunlife - Fund Forward | Jake Riddell</title>
+    <title>Sun Life - Fund Forward | Jake Riddell</title>
     <style>
         * {
             margin: 0;
@@ -18,6 +18,85 @@
             background: #fafafa;
         }
 
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .logo-dot {
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            font-size: 0.9rem;
+            color: #64748b;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #3b82f6;
+        }
+
+        /* Back Button */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .back-button:hover {
+            color: #3b82f6;
+            transform: translateX(-3px);
+        }
+
+        .back-button svg {
+            transition: transform 0.2s;
+        }
+
+        .back-button:hover svg {
+            transform: translateX(-2px);
+        }
+
+        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -96,6 +175,20 @@
             height: auto;
         }
 
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 40px;
+            margin-bottom: 80px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
         .persona-section {
             margin-bottom: 80px;
         }
@@ -144,20 +237,6 @@
             font-weight: bold;
         }
 
-        .image-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 40px;
-            margin-bottom: 80px;
-        }
-
-        .image-grid img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
         .solution-section {
             margin-bottom: 60px;
         }
@@ -193,8 +272,28 @@
     </style>
 </head>
 <body>
+    <header>
+        <nav class="nav">
+            <div class="nav-brand">
+                <div class="logo-dot"></div>
+                <span>Jake Riddell</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#projects" class="nav-link">Projects</a>
+                <a href="index.html#futures-skills" class="nav-link">Skills</a>
+            </div>
+        </nav>
+    </header>
+
     <div class="container">
-        <h1>Sunlife - Fund Forward</h1>
+        <a href="index.html" class="back-button">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Back to Portfolio
+        </a>
+        
+        <h1>Sun Life - Fund Forward</h1>
         <p class="subtitle">First place at the uXperience Design Jam</p>
 
         <div class="intro-section">
@@ -211,7 +310,7 @@
             </div>
             
             <div class="hero-image-container">
-                <img src="images/sunlife design jam.avif" alt="Fund Forward Website Mockup" class="hero-image">
+                <img src="images/sunlife-hero.jpg" alt="Fund Forward Website Mockup" class="hero-image">
             </div>
         </div>
 
@@ -221,7 +320,7 @@
         </section>
 
         <div class="logo-center">
-            <img src="fund-forward-logo.jpg" alt="Fund Forward Logo">
+            <img src="images/fund-forward-logo.jpg" alt="Fund Forward Logo">
         </div>
 
         <section class="persona-section">
@@ -257,21 +356,28 @@
         </section>
 
         <div class="image-grid">
-            <img src="persona-card.jpg" alt="Emily Turner Persona Card">
-            <img src="goal-setting.jpg" alt="Set Your Goals Interface">
+            <img src="images/persona-card.jpg" alt="Emily Turner Persona Card">
+            <img src="images/goal-setting.jpg" alt="Set Your Goals Interface">
         </div>
 
         <section class="solution-section">
             <h2>Our Solution</h2>
             <div class="solution-content">
-                <p>Through the research insights provided by Sunlife, internal innovation and external mentoring, we created <strong>Fund Forward</strong>. Fund Forward is a dynamic look forward into your financial future. We visualize the user end goal using a graph that highlights life milestones and there financial impact. Fund Forward acts as an infographic you can explore to learn more about specific financial decisions.</p>
+                <p>Through the research insights provided by Sun Life, internal innovation and external mentoring, we created <strong>Fund Forward</strong>. Fund Forward is a dynamic look forward into your financial future. We visualize the user end goal using a graph that highlights life milestones and their financial impact. Fund Forward acts as an infographic you can explore to learn more about specific financial decisions.</p>
             </div>
         </section>
 
         <div class="image-grid">
-            <img src="graph-1.jpg" alt="Fund Forward Financial Graph 1">
-            <img src="graph-2.jpg" alt="Fund Forward Financial Graph 2">
+            <img src="images/graph-1.jpg" alt="Fund Forward Financial Graph 1">
+            <img src="images/graph-2.jpg" alt="Fund Forward Financial Graph 2">
         </div>
+
+        <section class="solution-section">
+            <h2>Challenges</h2>
+            <div class="solution-content">
+                <p>The biggest limiting factor for our team was time. With only one day to research, ideate, design, and pitch to Sun Life judges, we had to make quick decisions. This time constraint limited our ability to conduct extensive user testing with diverse demographics. While Emily represented our primary persona, future iterations would benefit from testing with users across different age groups, income levels, and financial literacy backgrounds to ensure the tool is truly accessible and valuable for all young adults starting their financial journey.</p>
+            </div>
+        </section>
     </div>
 </body>
 </html>
