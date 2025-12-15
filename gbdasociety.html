@@ -1,219 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>GBDA Society – Brand & Community · Jake Riddell</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root {
-      --bg: #020617;
-      --card: #020617;
-      --card-alt: #0b1020;
-      --text: #f9fafb;
-      --muted: #9ca3af;
-    }
-    * { box-sizing: border-box; scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top, #1f2937 0, #020617 45%, #000 100%),
-        linear-gradient(to bottom, #020617, #020617);
-      color: var(--text);
-    }
-    a { color: inherit; text-decoration: none; }
-    header {
-      position: sticky; top: 0; z-index: 40;
-      backdrop-filter: blur(16px);
-      background: linear-gradient(to bottom, rgba(3,7,18,0.95), rgba(3,7,18,0.6), transparent);
-      border-bottom: 1px solid rgba(148,163,184,0.18);
-    }
-    .nav {
-      max-width: 960px; margin: 0 auto; padding: 0.75rem 1.5rem;
-      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-      font-size: 0.9rem;
-    }
-    .nav-left { display: flex; align-items: center; gap: 0.55rem; }
-    .logo-dot {
-      width: 10px; height: 10px; border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, #22c55e, #38bdf8 40%, #6366f1);
-      box-shadow: 0 0 16px rgba(34,197,94,0.9);
-    }
-    .name { font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.82rem; }
-    .nav-right { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .nav-link { color: var(--muted); }
-    .nav-link:hover { color: #e5e7eb; text-decoration: underline; text-underline-offset: 3px; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jake Riddell - GBDA Society</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    main { max-width: 960px; margin: 0 auto; padding: 2.4rem 1.5rem 3rem; }
-    .eyebrow { font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; }
-    h1 { font-size: clamp(1.9rem, 2.5vw + 1rem, 2.4rem); margin: 0 0 0.6rem; }
-    .subtitle { font-size: 0.95rem; color: var(--muted); max-width: 38rem; line-height: 1.6; margin-bottom: 1.4rem; }
-    .meta-row { display: flex; flex-wrap: wrap; gap: 0.6rem 1.3rem; font-size: 0.8rem; color: var(--muted); margin-bottom: 2rem; }
-    .meta-label { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.7rem; color: var(--muted); }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+        }
 
-    .grid { display: grid; gap: 1.1rem; }
-    @media (min-width: 768px) { .grid-2 { grid-template-columns: 1.4fr 1.2fr; } }
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e2e8f0;
+        }
 
-    .card {
-      border-radius: 1rem;
-      border: 1px solid rgba(148,163,184,0.22);
-      padding: 1rem 1rem 1rem;
-      background:
-        radial-gradient(circle at top left, rgba(59,130,246,0.18), transparent 55%),
-        #020617;
-    }
-    .card-alt {
-      background:
-        radial-gradient(circle at top left, rgba(34,197,94,0.18), transparent 55%),
-        #020617;
-    }
-    h2 { font-size: 1.1rem; margin: 0 0 0.4rem; }
-    p { font-size: 0.87rem; line-height: 1.6; color: var(--muted); margin: 0 0 0.6rem; }
-    ul { margin: 0.25rem 0 0.6rem 1.1rem; padding: 0; font-size: 0.86rem; color: var(--muted); }
-    li { margin-bottom: 0.25rem; }
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
 
-    .tag-row { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.4rem; }
-    .tag {
-      font-size: 0.72rem; padding: 0.22rem 0.5rem;
-      border-radius: 999px;
-      background: rgba(15,23,42,0.9);
-      border: 1px solid rgba(148,163,184,0.45);
-      color: #e5e7eb;
-    }
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
 
-    .pill {
-      display: inline-flex; align-items: center; gap: 0.35rem;
-      padding: 0.3rem 0.55rem; border-radius: 999px;
-      border: 1px solid rgba(56,189,248,0.8);
-      font-size: 0.75rem; color: #e5e7eb;
-      background: radial-gradient(circle at left, rgba(56,189,248,0.25), transparent 55%);
-      margin-bottom: 0.6rem;
-    }
-    .dot { width: 6px; height: 6px; border-radius: 999px; background: #22c55e; box-shadow: 0 0 8px rgba(34,197,94,0.9); }
+        .logo-dot {
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 50%;
+        }
 
-    footer {
-      max-width: 960px; margin: 0 auto; padding: 0 1.5rem 2.4rem;
-      font-size: 0.78rem; color: var(--muted);
-      display: flex; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap;
-    }
-    .footer-link { color: var(--muted); text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 2px; }
-  </style>
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            font-size: 0.9rem;
+            color: #64748b;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #3b82f6;
+        }
+
+        /* Back Button */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .back-button:hover {
+            color: #3b82f6;
+            transform: translateX(-3px);
+        }
+
+        .back-button svg {
+            transition: transform 0.2s;
+        }
+
+        .back-button:hover svg {
+            transform: translateX(-2px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+
+        .subtitle {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .intro-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+            align-items: start;
+        }
+
+        .intro-text p {
+            font-size: 1em;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .project-details {
+            font-size: 0.95em;
+            line-height: 2;
+        }
+
+        .project-details strong {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        h2 {
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+
+        .section-content {
+            margin-bottom: 60px;
+        }
+
+        .section-content p {
+            font-size: 1em;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 40px;
+            margin-bottom: 80px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .persona-section {
+            margin-bottom: 80px;
+        }
+
+        .persona-intro {
+            margin-bottom: 30px;
+        }
+
+        .persona-intro h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .persona-intro p {
+            font-size: 1em;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .requirement-column ul {
+            list-style: none;
+        }
+
+        .requirement-column li {
+            font-size: 0.95em;
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #444;
+        }
+
+        .requirement-column li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .solution-section {
+            margin-bottom: 60px;
+        }
+
+        .solution-content p {
+            font-size: 1em;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 968px) {
+            .intro-section {
+                grid-template-columns: 1fr;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .requirements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="nav">
-      <div class="nav-left">
-        <div class="logo-dot"></div>
-        <div class="name">Jake Riddell</div>
-      </div>
-      <div class="nav-right">
-        <a href="index.html#projects" class="nav-link">← Back to Projects</a>
-        <a href="index.html" class="nav-link">Home</a>
-      </div>
-    </div>
-  </header>
+    <header>
+        <nav class="nav">
+            <div class="nav-brand">
+                <div class="logo-dot"></div>
+                <span>Jake Riddell</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#projects" class="nav-link">Projects</a>
+            </div>
+        </nav>
+    </header>
 
-  <main>
-    <div class="eyebrow">Case Study · GBDA Society</div>
-    <h1>Building a brand and community for 500+ GBDA students</h1>
-    <p class="subtitle">
-      As President of the GBDA Society, led a full refresh of the society’s brand and communication system,
-      grew reach across channels, and coordinated initiatives that gave students more ways to connect,
-      learn, and show their work.[file:116]
-    </p>
+    <div class="container">
+        <a href="index.html" class="back-button">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Back to Portfolio
+        </a>
+        
+        <h1>Project & Event Management</h1>
+        <p class="subtitle">Student Leader</p>
 
-    <div class="meta-row">
-      <div>
-        <div class="meta-label">Role</div>
-        <div>President · Strategy, brand, content, project management</div>
-      </div>
-      <div>
-        <div class="meta-label">Scope</div>
-        <div>500+ peers · LinkedIn, Instagram, on‑campus presence</div>
-      </div>
-      <div>
-        <div class="meta-label">Impact</div>
-        <div>100k+ views, $5,000+ funding secured for initiatives</div>
-      </div>
-    </div>
-
-    <section class="grid grid-2">
-      <article class="card">
-        <div class="pill"><span class="dot"></span><span>Brand & communication system</span></div>
-        <h2>From scattered touchpoints to a coherent identity</h2>
-        <p>
-          Before the redesign, GBDA’s presence across platforms felt fragmented, making it harder for
-          students to understand what the society offered or how to get involved.[file:116]
-        </p>
-        <ul>
-          <li>Audited existing channels: visual style, tone, content types, engagement patterns.</li>
-          <li>Defined a simple brand system that works across digital and physical touchpoints.</li>
-          <li>Rolled out templates and guidelines so future content stays consistent.</li>
-        </ul>
-        <div class="tag-row">
-          <span class="tag">Brand systems</span>
-          <span class="tag">Content strategy</span>
-          <span class="tag">Design operations</span>
+        <div class="intro-section">
+            <div class="intro-text">
+                <p>Project & Event Management is a passion that I first recognized when I joined the Global Business and Digital Arts (GBDA) Society as their Communications Director. I was thrown head first into high level team management, rapid coordination and essential initiative. I ran with this pressure and learned it was something I thrive in. Since then, I have continued to run events, lead the GBDA Society as the President and completed formal university courses on Project Management.</p>
+                
+                <div class="project-details">
+                    <p><strong>Attained over $5000 in  sponsorships and donations</strong></p>
+                    <p><strong>Hosted events with 100+ participants</strong> </p>
+                    <p><strong>Coordinated social media strategy that attained over 100,000 views:</strong></p>
+                    <p><strong>Collaborated with esteemed companies and organizations:</strong></p>
+                    <p><strong>Managed concurrent projects with a range of diverse teams</strong></p>
+                </div>
+            </div>
+            
+            <div class="hero-image-container">
+                <img src="images/rogers group.avif" alt="Rogers BTS group" class="hero-image">
+            </div>
         </div>
-      </article>
 
-      <article class="card card-alt">
-        <h2>Execution and results</h2>
-        <p>
-          Implemented the new identity across LinkedIn, Instagram, and on‑campus materials, coordinating
-          with a cross‑functional team to keep everything aligned.[file:116]
-        </p>
-        <ul>
-          <li>Social media strategy reached over 100,000 combined views.</li>
-          <li>Secured over $5,000 in funding to support events and opportunities for 500+ peers.</li>
-          <li>Collaborated with university partners and industry professionals to mentor and judge
-            student work.[file:116]
-          </li>
-        </ul>
-        <div class="tag-row">
-          <span class="tag">Stakeholder collaboration</span>
-          <span class="tag">Metrics‑driven iteration</span>
-          <span class="tag">Leadership</span>
+        <section class="section-content">
+            <h2>Team</h2>
+            <p>GBDA Society President</p>
+          <p>Led, organized, and collaborated with an enternal executive team, the student body, industry professionals and university Representatives</p>
+        </section>
+
+        <div class="image-grid">
+            <img src="images/rogers full display.avif" alt="Rogers BTS App Interface">
         </div>
-      </article>
-    </section>
 
-    <section class="grid grid-2">
-      <article class="card card-alt">
-        <div class="pill"><span class="dot"></span><span>Systems & leadership</span></div>
-        <h2>Designing the way work gets done</h2>
-        <p>
-          Beyond visuals, a lot of the work was designing how projects move: who owns what, how decisions
-          are made, and how feedback flows between teams.[file:116]
-        </p>
-        <ul>
-          <li>Set up simple project structures so multiple initiatives could run in parallel.</li>
-          <li>Used regular check‑ins and retrospectives to adapt as the term evolved.</li>
-          <li>Created opportunities for newer students to step into visible roles.</li>
-        </ul>
-      </article>
+        <section class="persona-section">
+            <h2>Events</h2>
+            
+            <div class="persona-intro">
+                <h3>Toronto Tech Week - June 2025</h3>
+                <p>As Co-Project Manager, I coordinated an event for 50 participants in partnership with Toronto Tech Week and the Stratford School of Interaction Design and Business. I secured over $3,000 in sponsorships and managed key deliverables including private transportation and custom souvenirs for attendees.</p>
+            </div>
+            <div class="persona-intro">
+                <h3>Design Sprint 2025 - June 2025</h3>
+                <p>As Lead Project Manager, I coordinated an event for 50 participants in partnership with UW/UX, a judge and mentor from Sun Life, and the Stratford School of Interaction Design and Business. I managed the delivery of over $600 in prizes, custom gift bags, and both physical and digital infographics for the event.</p>
+            </div>
+              <div class="persona-intro">
+                <h3>Mosaic 2025 - March 2025</h3>
+                <p>As Communications Manager for Mosaic 2025 in March 2025, I coordinated an event for 100 participants in partnership with judges and mentors from Sun Life, Tim Hortons and startups, the Arts Endowment Fund, and the Stratford School of Interaction Design and Business. I managed over $600 in prizes, oversaw venue setup, and established digital communication channels for the event.</p>
+              </div>
+            
+        
+        </section>
 
-      <article class="card">
-        <h2>What this means for Futures Lab</h2>
-        <p>
-          Futures Lab is about prototyping AI‑enabled learning experiences in a collaborative, workshop‑like
-          environment.[web:1][web:3] Leading GBDA prepared the ground: coordinating diverse contributions,
-          making work visible, and keeping momentum across many moving parts.[file:116]
-        </p>
-        <p>
-          The same skills—facilitation, communication, and building systems that others can use—are key
-          when experimenting with new AI tools in a lab setting.[web:1][web:4]
-        </p>
-      </article>
-    </section>
-  </main>
-
-  <footer>
-    <span>© 2025 · Jake Riddell</span>
-    <div>
-      <a href="index.html#projects" class="footer-link">Back to main Projects</a>
+        <div class="image-grid">
+            <img src="images/rogers-white-board.avif" alt="Rogers BTS Whiteboard">
+        </div>
     </div>
-  </footer>
 </body>
 </html>
