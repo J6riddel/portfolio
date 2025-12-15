@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sunlife - Fund Forward | Jake Riddell</title>
+    <title>Jake Riddell - GBDA Society</title>
     <style>
         * {
             margin: 0;
@@ -18,6 +18,85 @@
             background: #fafafa;
         }
 
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .logo-dot {
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            font-size: 0.9rem;
+            color: #64748b;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #3b82f6;
+        }
+
+        /* Back Button */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .back-button:hover {
+            color: #3b82f6;
+            transform: translateX(-3px);
+        }
+
+        .back-button svg {
+            transition: transform 0.2s;
+        }
+
+        .back-button:hover svg {
+            transform: translateX(-2px);
+        }
+
+        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -86,14 +165,18 @@
             margin-bottom: 20px;
         }
 
-        .logo-center {
-            text-align: center;
-            margin: 60px 0;
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 40px;
+            margin-bottom: 80px;
         }
 
-        .logo-center img {
-            width: 150px;
+        .image-grid img {
+            width: 100%;
             height: auto;
+            border-radius: 8px;
         }
 
         .persona-section {
@@ -144,20 +227,6 @@
             font-weight: bold;
         }
 
-        .image-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 40px;
-            margin-bottom: 80px;
-        }
-
-        .image-grid img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
         .solution-section {
             margin-bottom: 60px;
         }
@@ -193,84 +262,79 @@
     </style>
 </head>
 <body>
+    <header>
+        <nav class="nav">
+            <div class="nav-brand">
+                <div class="logo-dot"></div>
+                <span>Jake Riddell</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#projects" class="nav-link">Projects</a>
+                <a href="index.html#futures-skills" class="nav-link">Skills</a>
+            </div>
+        </nav>
+    </header>
+
     <div class="container">
-        <h1>Sunlife - Fund Forward</h1>
-        <p class="subtitle">First place at the uXperience Design Jam</p>
+        <a href="index.html" class="back-button">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Back to Portfolio
+        </a>
+        
+        <h1>Project & Event Management</h1>
+        <p class="subtitle">Student Leader</p>
 
         <div class="intro-section">
             <div class="intro-text">
-                <p>Myself and a team of five students spent one day innovating a way to promote financial literacy for young adults.</p>
+                <p>Project & Event Management is a passion that I first recognized when I joined the Global Business and Digital Arts (GBDA) Society as their Communications Director. I was thrown head first into high level team management, rapid coordination and essential initiative. I ran with this pressure and learned it was something I thrive in. Since then, I have continued to run events, lead the GBDA Society as the President and completed formal university courses on Project Management.</p>
                 
                 <div class="project-details">
-                    <p><strong>Role:</strong> UX Designer</p>
-                    <p><strong>Software:</strong> Figma, Adobe</p>
-                    <p><strong>Deliverables:</strong> Mid-Fidelity Website and Brand Strategy</p>
-                    <p><strong>Time:</strong> 1 Day</p>
-                    <p><strong>Team:</strong> 5 students</p>
+                    <p><strong>Attained over $5000 in  sponsorships and donations</strong></p>
+                    <p><strong>Hosted events with 100+ participants</strong> </p>
+                    <p><strong>Coordinated social media strategy that attained over 100,000 views:</strong></p>
+                    <p><strong>Collaborated with esteemed companies and organizations:</strong></p>
+                    <p><strong>Managed concurrent projects with a range of diverse teams</strong></p>
                 </div>
             </div>
             
             <div class="hero-image-container">
-                <img src="sunlife-hero.jpg" alt="Fund Forward Website Mockup" class="hero-image">
+                <img src="images/rogers group.avif" alt="Rogers BTS group" class="hero-image">
             </div>
         </div>
 
         <section class="section-content">
-            <h2>What we solved</h2>
-            <p>Our task was to design a solution for youths that want to get a start in financial literacy. Our research found that two of the biggest barriers are a lack of knowledge and the over complication of initial steps. Young adults under utilize the resources available and get stuck at the first step because they do not know where they stand financially.</p>
+            <h2>Team</h2>
+            <p>GBDA Society President</p>
+          <p>Led, organized, and collaborated with an enternal executive team, the student body, industry professionals and university Representatives</p>
         </section>
 
-        <div class="logo-center">
-            <img src="fund-forward-logo.jpg" alt="Fund Forward Logo">
+        <div class="image-grid">
+            <img src="images/rogers full display.avif" alt="Rogers BTS App Interface">
         </div>
 
         <section class="persona-section">
-            <h2>Who we solved for</h2>
+            <h2>Events</h2>
             
             <div class="persona-intro">
-                <h3>Meet Emily Turner!</h3>
-                <p>Emily is a 29 year old software developer living in Toronto with her spouse. She is focused on saving for a home and preparing for future family expenses. Although comfortable with technology, Emily finds it challenging to prioritize her financial goals especially when planning for long term commitments like retirement.</p>
+                <h3>Toronto Tech Week - June 2025</h3>
+                <p>As Co-Project Manager, I coordinated an event for 50 participants in partnership with Toronto Tech Week and the Stratford School of Interaction Design and Business. I secured over $3,000 in sponsorships and managed key deliverables including private transportation and custom souvenirs for attendees.</p>
             </div>
-
-            <h3 style="margin-bottom: 20px; font-size: 1.1em;">Emily's user requirements</h3>
+            <div class="persona-intro">
+                <h3>Design Sprint 2025 - June 2025</h3>
+                <p>As Lead Project Manager, I coordinated an event for 50 participants in partnership with UW/UX, a judge and mentor from Sun Life, and the Stratford School of Interaction Design and Business. I managed the delivery of over $600 in prizes, custom gift bags, and both physical and digital infographics for the event.</p>
+            </div>
+              <div class="persona-intro">
+                <h3>Mosaic 2025 - March 2025</h3>
+                <p>As Communications Manager for Mosaic 2025 in March 2025, I coordinated an event for 100 participants in partnership with judges and mentors from Sun Life, Tim Hortons and startups, the Arts Endowment Fund, and the Stratford School of Interaction Design and Business. I managed over $600 in prizes, oversaw venue setup, and established digital communication channels for the event.</p>
+              </div>
             
-            <div class="requirements-grid">
-                <div class="requirement-column">
-                    <ul>
-                        <li>Needs to balance multiple goals</li>
-                        <li>Wants to understand the impact of major life events</li>
-                    </ul>
-                </div>
-                <div class="requirement-column">
-                    <ul>
-                        <li>Needs to optimize savings and investments</li>
-                        <li>Worries about economic stability</li>
-                    </ul>
-                </div>
-                <div class="requirement-column">
-                    <ul>
-                        <li>Struggles to prioritize the future</li>
-                        <li>Needs concise planning</li>
-                    </ul>
-                </div>
-            </div>
+        
         </section>
 
         <div class="image-grid">
-            <img src="persona-card.jpg" alt="Emily Turner Persona Card">
-            <img src="goal-setting.jpg" alt="Set Your Goals Interface">
-        </div>
-
-        <section class="solution-section">
-            <h2>Our Solution</h2>
-            <div class="solution-content">
-                <p>Through the research insights provided by Sunlife, internal innovation and external mentoring, we created <strong>Fund Forward</strong>. Fund Forward is a dynamic look forward into your financial future. We visualize the user end goal using a graph that highlights life milestones and there financial impact. Fund Forward acts as an infographic you can explore to learn more about specific financial decisions.</p>
-            </div>
-        </section>
-
-        <div class="image-grid">
-            <img src="graph-1.jpg" alt="Fund Forward Financial Graph 1">
-            <img src="graph-2.jpg" alt="Fund Forward Financial Graph 2">
+            <img src="images/rogers-white-board.avif" alt="Rogers BTS Whiteboard">
         </div>
     </div>
 </body>
