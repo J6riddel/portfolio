@@ -92,10 +92,12 @@
       padding: 3rem 1.5rem;
     }
 
-    @media (max-width: 768px) {
-      main {
-        padding: 2rem 1.25rem;
-      }
+  @media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr; /* NEW LINE */
+  }
+}
     }
 
     /* Hero */
@@ -267,10 +269,12 @@
       white-space: nowrap;
     }
 
-    .card p {
-      font-size: 0.9375rem;
-      margin-bottom: 0.875rem;
-    }
+   .card p {
+  font-size: 0.9375rem;
+  margin-bottom: 0.875rem;
+  flex-grow: 1; /* NEW */
+}
+
 
     .tag-row {
       display: flex;
@@ -311,9 +315,20 @@
   display: block;
 }
 
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex; /* CHANGED */
+  height: 100%; /* NEW */
+}
+
 .card-link .card {
   cursor: pointer;
+  display: flex; /* NEW */
+  flex-direction: column; /* NEW */
+  height: 100%; /* NEW */
 }
+
 
 
     /* Skills grid */
@@ -505,7 +520,7 @@
       </article>
     </a>
 
-    <a href="gbda-society.html" class="card-link">
+    <a href="gbdasociety.html" class="card-link">
       <article class="card">
         <div class="card-header">
           <h3>GBDA Society – Brand System</h3>
