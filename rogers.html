@@ -5,61 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rogers BTS | Jake Riddell</title>
     <style>
-
-        /* Header */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #e2e8f0;
-    }
-
-    .nav {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-weight: 600;
-      font-size: 0.875rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .logo-dot {
-      width: 8px;
-      height: 8px;
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-      border-radius: 50%;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .nav-link {
-      font-size: 0.9rem;
-      color: #64748b;
-      transition: color 0.2s;
-    }
-
-    .nav-link:hover {
-      color: #3b82f6;
-    }
-        
         * {
             margin: 0;
             padding: 0;
@@ -73,6 +18,85 @@
             background: #fafafa;
         }
 
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .logo-dot {
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            font-size: 0.9rem;
+            color: #64748b;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #3b82f6;
+        }
+
+        /* Back Button */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .back-button:hover {
+            color: #3b82f6;
+            transform: translateX(-3px);
+        }
+
+        .back-button svg {
+            transition: transform 0.2s;
+        }
+
+        .back-button:hover svg {
+            transform: translateX(-2px);
+        }
+
+        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -238,19 +262,27 @@
     </style>
 </head>
 <body>
-      <header>
-    <nav class="nav">
-      <div class="nav-brand">
-        <div class="logo-dot"></div>
-        <span>Jake Riddell</span>
-      </div>
-      <div class="nav-links">
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#futures-skills" class="nav-link">Skills</a>
-      </div>
-    </nav>
-  </header>
+    <header>
+        <nav class="nav">
+            <div class="nav-brand">
+                <div class="logo-dot"></div>
+                <span>Jake Riddell</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#projects" class="nav-link">Projects</a>
+                <a href="index.html#futures-skills" class="nav-link">Skills</a>
+            </div>
+        </nav>
+    </header>
+
     <div class="container">
+        <a href="index.html" class="back-button">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Back to Portfolio
+        </a>
+        
         <h1>Rogers BTS</h1>
         <p class="subtitle">First place at the uXperience Design Jam</p>
 
@@ -279,7 +311,7 @@
         </section>
 
         <div class="image-grid">
-            <img src="images/rogers full display.avif" alt="Rogers BTS App Interface 1">
+            <img src="images/rogers full display.avif" alt="Rogers BTS App Interface">
         </div>
 
         <section class="persona-section">
@@ -322,9 +354,9 @@
             <h2>Our Solution</h2>
             <div class="solution-content">
                 <p>Through the research insights provided by Rogers, internal innovation and external mentoring, we created the <strong>Rogers BTS app</strong>. A two tiered experience that maintains Rogers current offerings and extended perks to premium and family plan customers. The VIP tier offers premium perks, spending experiences and enhanced tech. The BTS app ensures customer engagement and satisfaction through a gamified and community experience that cares for its users.</p>
-                <p>Now, why would Walter, or anyone, open our app everyday? Simply, because its fun. Introducing Play Beyond, a monthly challenge that give you the chance to win big prizes and sparks competition in the lunch room. Users can take their picks on their favorite teams to earn points and climb the leader board. Play Beyond Leverages Rogers 5G low-latency technology to provide live updates of games. This gets customers opening their BTS app every day, promoting awareness of all that Rogers has to offer. </p>
+                <p>Now, why would Walter, or anyone, open our app everyday? Simply, because its fun. Introducing Play Beyond, a monthly challenge that give you the chance to win big prizes and sparks competition in the lunch room. Users can take their picks on their favorite teams to earn points and climb the leader board. Play Beyond Leverages Rogers 5G low-latency technology to provide live updates of games. This gets customers opening their BTS app every day, promoting awareness of all that Rogers has to offer.</p>
             </div>
-            </div>
+        </section>
 
         <section class="solution-section">
             <h2>Challenges</h2>
