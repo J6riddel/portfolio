@@ -182,6 +182,24 @@
 
         .persona-section {
             margin-bottom: 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .persona-content {
+            /* Left column for text */
+        }
+
+        .persona-image {
+            /* Right column for image */
+        }
+
+        .persona-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
         }
 
         .persona-intro {
@@ -245,6 +263,10 @@
             }
 
             .image-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .persona-section {
                 grid-template-columns: 1fr;
             }
 
@@ -315,40 +337,42 @@
         </div>
 
         <section class="persona-section">
-            <h2>Who we solved for</h2>
-            
-            <div class="persona-intro">
-                <h3>Meet Walter Smith!</h3>
-                <p>A 56 year old married dad of two that enjoys golfing and a good filet mignon. Walter values exclusivity, family, quality and comfort. Walter appreciates a VIP experience that he can share with his family and is willing to pay for it.</p>
+            <div class="persona-content">
+                <h2>Who we solved for</h2>
+                
+                <div class="persona-intro">
+                    <h3>Meet Walter Smith!</h3>
+                    <p>A 56 year old married dad of two that enjoys golfing and a good filet mignon. Walter values exclusivity, family, quality and comfort. Walter appreciates a VIP experience that he can share with his family and is willing to pay for it.</p>
+                </div>
+
+                <h3 style="margin-bottom: 20px; font-size: 1.1em;">Walter's user requirements</h3>
+                
+                <div class="requirements-grid">
+                    <div class="requirement-column">
+                        <ul>
+                            <li>Personalization</li>
+                            <li>Current 5G Tech Access</li>
+                        </ul>
+                    </div>
+                    <div class="requirement-column">
+                        <ul>
+                            <li>Family Plan/Package</li>
+                            <li>Future 5G Tech Access</li>
+                        </ul>
+                    </div>
+                    <div class="requirement-column">
+                        <ul>
+                            <li>Enhanced Customer Experience</li>
+                            <li>Customer Appreciation Perks</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-            <h3 style="margin-bottom: 20px; font-size: 1.1em;">Walter's user requirements</h3>
-            
-            <div class="requirements-grid">
-                <div class="requirement-column">
-                    <ul>
-                        <li>Personalization</li>
-                        <li>Current 5G Tech Access</li>
-                    </ul>
-                </div>
-                <div class="requirement-column">
-                    <ul>
-                        <li>Family Plan/Package</li>
-                        <li>Future 5G Tech Access</li>
-                    </ul>
-                </div>
-                <div class="requirement-column">
-                    <ul>
-                        <li>Enhanced Customer Experience</li>
-                        <li>Customer Appreciation Perks</li>
-                    </ul>
-                </div>
+            <div class="persona-image">
+                <img src="images/rogers-white-board.avif" alt="Rogers BTS Whiteboard">
             </div>
         </section>
-
-        <div class="image-grid">
-            <img src="images/rogers-white-board.avif" alt="Rogers BTS Whiteboard">
-        </div>
 
         <section class="solution-section">
             <h2>Our Solution</h2>
