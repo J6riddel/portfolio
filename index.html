@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
+   <script>
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init zr Wr fi Br Gr ci Nr Hr capture Ui calculateEventProperties Kr register register_once register_for_session unregister unregister_for_session Zr getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Xr Jr createPersonProfile Qr jr ts opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Vr debug O Yr getPageViewId captureTraceFeedback captureTraceMetric Or".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     posthog.init('phc_lpKBD7CtBAywd3qb1PRMME3l7l6LvEZyDSI2Dc6uQjI', {
         api_host: 'https://us.i.posthog.com',
@@ -10,9 +10,9 @@
     })
 </script>
   <meta charset="UTF-8" />
-  <title>Jake Riddell's Portfolio</title>
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <title>Jake Riddell</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="images/favicon.png">
   <style>
     * {
       margin: 0;
@@ -25,511 +25,324 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.6;
-      color: #1e293b;
-      background: #ffffff;
-      font-size: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+      background: #000000;
+      color: #ffffff;
+      line-height: 1.5;
     }
 
-    /* Typography scale */
-    h1 { font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
-    h2 { font-size: clamp(1.25rem, 3vw, 1.5rem); font-weight: 600; line-height: 1.3; margin-bottom: 0.75rem; }
-    h3 { font-size: clamp(1rem, 2.5vw, 1.125rem); font-weight: 600; line-height: 1.4; margin-bottom: 0.5rem; }
-    p { font-size: 1rem; line-height: 1.65; margin-bottom: 1rem; color: #475569; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    a { color: inherit; text-decoration: none; }
-
-    /* Header */
-    header {
-      position: sticky;
+    /* Navigation */
+    nav {
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #e2e8f0;
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .nav {
-      max-width: 1100px;
+    .nav-container {
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 1rem 1.5rem;
+      padding: 1.25rem 2rem;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
+      align-items: center;
     }
 
     .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      font-size: 0.9375rem;
       font-weight: 600;
-      font-size: 0.875rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .logo-dot {
-      width: 8px;
-      height: 8px;
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-      border-radius: 50%;
+      letter-spacing: 0.02em;
     }
 
     .nav-links {
       display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
+      gap: 2rem;
     }
 
     .nav-link {
-      font-size: 0.9rem;
-      color: #64748b;
-      transition: color 0.2s;
+      font-size: 0.9375rem;
+      transition: opacity 0.3s ease;
     }
 
     .nav-link:hover {
-      color: #3b82f6;
+      opacity: 0.6;
     }
 
-    /* Main container */
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem;
-    }
+    /* Hero Section */
+    
+    /* Hero credential section */
+.hero-credential {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
 
-  @media (min-width: 768px) {
-  .grid-2 {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 1fr; /* NEW LINE */
+.credential-logo {
+  height: 80px; /* Adjust size as needed */
+  width: auto;
+}
+
+.credential-text {
+  font-size: 1.175rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 600px) {
+  .hero-credential {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.20rem;
+  }
+  
+  .credential-logo {
+    height: 32px;
   }
 }
 
-    /* Hero */
     .hero {
-      display: grid;
-      gap: 2.5rem;
-      margin-bottom: 4rem;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+      position: relative;
     }
 
-    @media (min-width: 900px) {
-      .hero {
-        grid-template-columns: 1.8fr 1.2fr;
+    .hero-content {
+      max-width: 1400px;
+      width: 100%;
+    }
+
+    .hero-name {
+      font-size: clamp(5rem, 15vw, 12rem);
+      font-weight: 700;
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+    }
+
+    /* Projects Section */
+    .projects-section {
+      padding: 4rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
         gap: 3rem;
       }
     }
 
-    .hero-label {
-      font-size: 0.75rem;
+    .project-card {
+      display: block;
+      cursor: pointer;
+    }
+
+    .project-header {
+      margin-bottom: 1rem;
+    }
+
+    .project-meta {
+      font-size: 0.6875rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #94a3b8;
-      margin-bottom: 0.75rem;
-    }
-
-    .hero-intro {
-      max-width: 42rem;
-      color: #475569;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-badge {
-      display: inline-flex;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 0.5rem;
+      display: flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.5rem 0.875rem;
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-radius: 9999px;
-      font-size: 0.8125rem;
-      margin-bottom: 1.25rem;
     }
 
-    .status-dot {
-      width: 6px;
-      height: 6px;
-      background: #22c55e;
-      border-radius: 50%;
-      box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+    .project-meta::before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
     }
 
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem 1.5rem;
-      font-size: 0.875rem;
-      color: #64748b;
+    .project-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 0.375rem;
     }
 
-    .hero-card {
-      padding: 1.75rem;
-      background: linear-gradient(to bottom right, #f8fafc, #ffffff);
-      border: 1px solid #e2e8f0;
-      border-radius: 1rem;
+    .project-subtitle {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.5);
+      font-weight: 400;
     }
 
-    .hero-card h3 {
-      margin-bottom: 0.75rem;
+    .project-image-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #111;
     }
 
-    .hero-card ul {
-      margin: 0.5rem 0 1.25rem 1.25rem;
-      padding: 0;
+    .project-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
 
-    .hero-card li {
-      margin-bottom: 0.5rem;
-      font-size: 0.9375rem;
-      color: #475569;
+    .project-card:hover .project-image {
+      transform: scale(1.05);
     }
 
-    .hero-footer {
-      font-size: 0.8125rem;
-      color: #64748b;
-      padding-top: 1rem;
-      border-top: 1px solid #e2e8f0;
-    }
-
-    .hero-footer a {
-      color: #3b82f6;
-      text-decoration: underline;
-      text-decoration-style: dotted;
-    }
-
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-
-    .chip {
-      padding: 0.375rem 0.75rem;
-      font-size: 0.75rem;
-      background: #ffffff;
-      border: 1px solid #cbd5e1;
-      border-radius: 9999px;
-      color: #475569;
-    }
-
-    /* Sections */
-    section {
-      margin-bottom: 4rem;
-    }
-
-    .section-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #94a3b8;
-      margin-bottom: 0.5rem;
-    }
-
-    .section-intro {
-      max-width: 42rem;
-      color: #475569;
-      margin-bottom: 2rem;
-    }
-
-    /* Grid */
-    .grid {
-      display: grid;
-      gap: 1.25rem;
-    }
-
-   @media (min-width: 768px) {
-  .grid-2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-
-    /* Cards */
-    .card {
+    /* Glassmorphism overlay at bottom */
+    .project-glass {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
       padding: 1.5rem;
-      background: linear-gradient(to bottom right, #f8fafc, #ffffff);
-      border: 1px solid #e2e8f0;
-      border-radius: 0.875rem;
-      transition: box-shadow 0.2s, border-color 0.2s;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
 
-    .card:hover {
-      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
-      border-color: #cbd5e1;
+    .project-card:hover .project-glass {
+      transform: translateY(0);
     }
 
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 1rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .card-meta {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #94a3b8;
-      white-space: nowrap;
-    }
-
-   .card p {
-  font-size: 0.9375rem;
-  margin-bottom: 0.875rem;
-  flex-grow: 1; /* NEW */
-}
-
-
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.375rem;
-      margin-top: 1rem;
-    }
-
-    .tag {
-      padding: 0.25rem 0.625rem;
-      font-size: 0.75rem;
-      background: #ffffff;
-      border: 1px solid #cbd5e1;
-      border-radius: 9999px;
-      color: #64748b;
-    }
-
-    .view-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.375rem;
-      margin-top: 1rem;
-      padding: 0.5rem 0.875rem;
+    .project-description {
       font-size: 0.875rem;
-      font-weight: 500;
-      color: #3b82f6;
-      border-radius: 0.5rem;
-      transition: background 0.2s;
+      line-height: 1.5;
+      color: #ffffff;
     }
 
-    .view-link:hover {
-      background: #eff6ff;
-    }
-
-    .card-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
-.card-link {
-  text-decoration: none;
-  color: inherit;
-  display: flex; /* CHANGED */
-  height: 100%; /* NEW */
-}
-
-.card-link .card {
-  cursor: pointer;
-  display: flex; /* NEW */
-  flex-direction: column; /* NEW */
-  height: 100%; /* NEW */
-}
-
-    ul {
-      margin: 0.75rem 0 0 1.25rem;
-      padding: 0;
-    }
-
-    li {
-      margin-bottom: 0.5rem;
-      font-size: 0.9375rem;
-      color: #475569;
-    }
-
-    .skill-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-
-    .skill-pill {
-      padding: 0.375rem 0.75rem;
-      font-size: 0.8125rem;
-      background: #ffffff;
-      border: 1px solid #cbd5e1;
-      border-radius: 9999px;
-      color: #64748b;
-    }
-
-    .skill-pill-primary {
-      background: linear-gradient(to right, #dbeafe, #e0e7ff);
-      border-color: #3b82f6;
-      color: #1e40af;
-      font-weight: 500;
-    }
-
-    /* Footer */
-    footer {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem 3rem;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-      font-size: 0.875rem;
-      color: #64748b;
-      border-top: 1px solid #e2e8f0;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .footer-link {
-      color: #64748b;
-      transition: color 0.2s;
-    }
-
-    .footer-link:hover {
-      color: #3b82f6;
+    /* Spacing between sections */
+    .section-spacer {
+      height: 4rem;
     }
   </style>
 </head>
 <body>
-  <header>
-    <nav class="nav">
-      <div class="nav-brand">
-        <div class="logo-dot"></div>
-        <span>Jake Riddell</span>
-      </div>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-container">
+      <div class="nav-brand">Jake Riddell</div>
       <div class="nav-links">
-        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#work" class="nav-link">Work</a>
+        <a href="https://www.linkedin.com/in/jake-riddell-" class="nav-link">LinkedIn</a>
+        <a href="mailto:j6riddel@uwaterloo.ca" class="nav-link">Contact</a>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
 
-  <main>
-    <!-- Hero -->
-    <section class="hero">
-     <div>
-  <div class="hero-label">Global Business & Digital Arts · UWaterloo</div>
-  <h1>Jake Riddell</h1>
-  <p class="hero-intro">
-    Designer and digital strategist exploring how AI can help me learn, reflect, and make
-    better decisions. Currently doing digital and social work for a Socialpruf, a Toronto tech startup, with past experience as
-    President of the GBDA Society and two‑time uXperience Design Jam winner.
-  </p>
-  
-  <!-- NEW: Image placeholder -->
-  <img src="images/OOMfkq2XfBZujRVPxZMdWPYOJMM.avif" alt="Jake Riddell" style="width: 100%; max-width: 600px; height: auto; border-radius: 0.75rem; margin-bottom: 1.5rem;" />
-  
-  <div class="hero-badge">
-    <span class="status-dot"></span>
-    <span>Applying to UWaterloo × Google Futures Lab</span>
-  </div>
-</div>
-
-      <aside class="hero-card">
-        <h3>Quick snapshot</h3>
-        <ul>
-          <li>UWaterloo GBDA student pursuing an Economics minor</li>
-          <li>Currently a digital marketing co-op @ Socialpruf</li>
-          <li>Past President, GBDA Society – branding, comms, and events for 500+ peers</li>
-          <li>Two‑time uXperience Design Jam winner with Rogers and Sun Life</li>
-        </ul>
-
-        <h3 style="margin-top: 1.25rem;">Tools</h3>
-        <ul>
-          <li>Figma, Adobe Creative Suite, Framer</li>
-          <li>HTML/CSS, JavaScript</li>
-          <li>User research, UX design, go-to market strategy, project management</li>
-        </ul>
-       <h3 style="margin-top: 1.25rem; background: linear-gradient(90deg, #ea4335, #fbbc04, #34a853, #4285f4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Futures Lab Aligned Skills</h3>
-        <ul>
-          <li>Skilled at synthesizing insights and data with AI while considering ethical, accuracy and prompt implications</li>
-          <li>Experienced pitching to industry judges and presenting to diverse audiences in workshop and rapid iteration environments</li>
-          <li>Past President of GBDA Society, coordinating projects and teams for 500+ students across diverse initiatives</li>
-        </ul>
-      </aside>
-    </section>
-
-   <!-- Projects -->
-<section id="projects">
-  <div class="section-label">Projects</div>
-  <h2>Selected Work</h2>
-
-  <div class="grid grid-2">
-    <a href="rogers" class="card-link">
-      <article class="card">
-        <div class="card-header">
-          <h3>Rogers – Beyond the Seat</h3>
-          <span class="card-meta">Design Jam Winner</span>
-        </div>
-        <img src="images/rogers-case-study-futureapp.jpg" alt="Rogers Beyond the Seat" style="width: 100%; height: auto; border-radius: 0.5rem; margin-bottom: 1rem;" />
-        <p>
-          Collaborated with a multidisciplinary team to design a connected in-app experience, integrating Rogers technology into a cohesive service and brand story.
-        </p>
-        <span class="view-link">View case study →</span>
-      </article>
-    </a>
-
-    <a href="socialpruf" class="card-link">
-      <article class="card">
-        <div class="card-header">
-          <h3>Socialpruf – SAAS Product Marketing and Growth</h3>
-          <span class="card-meta">Co-op</span>
-        </div>
-        <img src="images/campaing canada team.jpg" alt="Socialpruf" style="width: 100%; height: auto; border-radius: 0.5rem; margin-bottom: 1rem;" />
-        <p>
-          Organic digital growth that drove over 120,000 social media views and 3000 website visits from agencies, brands, and influencers. Website design, making choices based on specific user needs, and fast iteration cycles. 
-        </p>
-        <span class="view-link">View case study →</span>
-      </article>
-    </a>
-
-    <a href="sunlife" class="card-link">
-      <article class="card">
-        <div class="card-header">
-          <h3>Sun Life – Financial Literacy Tool</h3>
-          <span class="card-meta">Design Jam Winner</span>
-        </div>
-        <img src="images/sunlife design jam.avif" alt="Sun Life Financial Literacy" style="width: 100%; height: auto; border-radius: 0.5rem; margin-bottom: 1rem;" />
-        <p>
-          Created an education tool that helps young Canadians build financial fluency by tailoring content and flows to specific user goals.
-        </p>
-        <span class="view-link">View case study →</span>
-      </article>
-    </a>
-
-    <a href="gbdasociety" class="card-link">
-      <article class="card">
-        <div class="card-header">
-          <h3>GBDA Society – Project Management</h3>
-          <span class="card-meta">Leadership</span>
-        </div>
-        <img src="images/gbdasoc crumbl porfolio picture.avif" alt="GBDA Society Brand" style="width: 100%; height: auto; border-radius: 0.5rem; margin-bottom: 1rem;" />
-        <p>
-          Led a full refresh of the society's visual identity and communication across channels, reaching over 100,000 combined views. Curated high-impact student events and opprotunity. Communicated with industry and university represetives for our student body.
-        </p>
-        <span class="view-link">View case study →</span>
-      </article>
-    </a>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-name">Jake Riddell</h1>
+    <div class="hero-credential">
+      <img src="images/Waterloo logo.png" alt="University of Waterloo" class="credential-logo">
+      <span class="credential-text">Honours of Global Business and Digital Arts | 2028</span>
+    </div>
+    
   </div>
 </section>
-  </main>
-
-  <footer>
-    <div class="footer-links">
-      <a href="#top" class="footer-link">Back to top</a>
-      <a href="https://www.linkedin.com/in/jake-riddell-" class="footer-link">LinkedIn</a>
-      <a href="mailto:j6riddel@uwaterloo.ca" class="footer-link">Email</a>
     </div>
-  </footer>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="work" class="projects-section">
+    <div class="projects-grid">
+      
+      <!-- Project 1 -->
+      <a href="rogers" class="project-card">
+        <div class="project-header">
+          <h2 class="project-title">Rogers | Beyond The Seat</h2>
+          <p class="project-subtitle">uXperience Design Jam Winner</p>
+        </div>
+        <div class="project-image-container">
+          <img src="images/rogers-case-study-futureapp.jpg" alt="Rogers Beyond the Seat" class="project-image">
+          <div class="project-glass">
+            <p class="project-description">
+              A connected in-app experience turning live events into a continuous service story.
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 2 -->
+      <a href="socialpruf" class="project-card">
+        <div class="project-header">
+          <h2 class="project-title">Social Pruf | Product Marketing and Growth</h2>
+          <p class="project-subtitle">Co-op</p>
+        </div>
+        <div class="project-image-container">
+          <img src="images/campaing canada team.jpg" alt="Socialpruf Growth" class="project-image">
+          <div class="project-glass">
+            <p class="project-description">
+              Organic digital growth that drove 120k+ views and 3000 website visits.
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 3 -->
+      <a href="sunlife" class="project-card">
+        <div class="project-header">
+          <h2 class="project-title">Sun Life | Financial Literacy for New Adults</h2>
+          <p class="project-subtitle">uXperience Design Jam Winner</p>
+        </div>
+        <div class="project-image-container">
+          <img src="images/sunlife design jam.avif" alt="Sun Life Financial Literacy" class="project-image">
+          <div class="project-glass">
+            <p class="project-description">
+              A goal-based learning tool making financial literacy feel tailored, visual, and achievable.
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 4 -->
+      <a href="gbdasociety" class="project-card">
+        <div class="project-header">
+          <h2 class="project-title">GBDA Society | President</h2>
+          <p class="project-subtitle">Community Leader</p>
+        </div>
+        <div class="project-image-container">
+          <img src="images/gbdasoc crumbl porfolio picture.avif" alt="GBDA Society Brand" class="project-image">
+          <div class="project-glass">
+            <p class="project-description">
+              Refreshed identity and programming reaching 500+ students and 100k+ combined views.
+            </p>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <div class="section-spacer"></div>
+
 </body>
 </html>
