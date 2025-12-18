@@ -6,9 +6,9 @@
     posthog.init('phc_lpKBD7CtBAywd3qb1PRMME3l7l6LvEZyDSI2Dc6uQjI', {
         api_host: 'https://us.i.posthog.com',
         defaults: '2025-11-30',
-        person_profiles: 'always', // or 'always' to create profiles for anonymous users as well
+        person_profiles: 'always',
     })
-</script>
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jake Riddell | Rogers BTS</title>
@@ -20,65 +20,61 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+            background: #000000;
+            color: #ffffff;
             line-height: 1.6;
-            color: #333;
-            background: #fafafa;
         }
 
-        /* Header */
-        header {
-            position: sticky;
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
             z-index: 100;
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid #e2e8f0;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .nav {
-            max-width: 1200px;
+        .nav-container {
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 1rem 1.5rem;
+            padding: 1.25rem 2rem;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
+            align-items: center;
         }
 
         .nav-brand {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            font-size: 0.9375rem;
             font-weight: 600;
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .logo-dot {
-            width: 8px;
-            height: 8px;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            border-radius: 50%;
+            letter-spacing: 0.02em;
         }
 
         .nav-links {
             display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
+            gap: 2rem;
         }
 
         .nav-link {
-            font-size: 0.9rem;
-            color: #64748b;
-            transition: color 0.2s;
+            font-size: 0.9375rem;
+            transition: opacity 0.3s ease;
         }
 
         .nav-link:hover {
-            color: #3b82f6;
+            opacity: 0.6;
         }
 
         /* Back Button */
@@ -86,14 +82,15 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 0.9rem;
-            color: #64748b;
-            margin-bottom: 1.5rem;
-            transition: color 0.2s, transform 0.2s;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 2.5rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
         }
 
         .back-button:hover {
-            color: #3b82f6;
+            color: #ffffff;
             transform: translateX(-3px);
         }
 
@@ -107,46 +104,59 @@
 
         /* Container */
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 60px 40px;
+            padding: 120px 2rem 80px;
+        }
+
+        /* Project Header */
+        .project-header {
+            margin-bottom: 5rem;
         }
 
         h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            font-weight: 400;
-            color: #1a1a1a;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
         }
 
         .subtitle {
-            font-size: 1em;
-            color: #666;
-            margin-bottom: 30px;
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 0.02em;
         }
 
+        /* Intro Section */
         .intro-section {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 80px;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            margin-bottom: 6rem;
             align-items: start;
         }
 
         .intro-text p {
-            font-size: 1em;
-            line-height: 1.8;
-            color: #444;
-            margin-bottom: 20px;
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
         }
 
         .project-details {
-            font-size: 0.95em;
-            line-height: 2;
+            font-size: 0.9375rem;
+            line-height: 1.9;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .project-details p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9375rem;
         }
 
         .project-details strong {
-            color: #1a1a1a;
+            color: #ffffff;
             font-weight: 600;
         }
 
@@ -156,30 +166,36 @@
             border-radius: 8px;
         }
 
+        /* Section Headings */
         h2 {
-            font-size: 2.2em;
-            margin-bottom: 25px;
-            font-weight: 400;
-            color: #1a1a1a;
+            font-size: clamp(1.875rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
         }
 
+        h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        /* Section Content */
         .section-content {
-            margin-bottom: 60px;
+            margin-bottom: 5rem;
         }
 
         .section-content p {
-            font-size: 1em;
-            line-height: 1.8;
-            color: #444;
-            margin-bottom: 20px;
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
         }
 
+        /* Image Grid */
         .image-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            margin-top: 40px;
-            margin-bottom: 80px;
+            margin: 4rem 0 6rem;
         }
 
         .image-grid img {
@@ -188,20 +204,23 @@
             border-radius: 8px;
         }
 
+        /* Persona Section */
         .persona-section {
-            margin-bottom: 80px;
+            margin-bottom: 6rem;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
             align-items: start;
         }
 
-        .persona-content {
-            /* Left column for text */
+        .persona-intro {
+            margin-bottom: 2.5rem;
         }
 
-        .persona-image {
-            /* Right column for image */
+        .persona-intro p {
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.8);
         }
 
         .persona-image img {
@@ -210,28 +229,12 @@
             border-radius: 8px;
         }
 
-        .persona-intro {
-            margin-bottom: 30px;
-        }
-
-        .persona-intro h3 {
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            font-weight: 600;
-            color: #1a1a1a;
-        }
-
-        .persona-intro p {
-            font-size: 1em;
-            line-height: 1.8;
-            color: #444;
-        }
-
+        /* Requirements Grid */
         .requirements-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 2rem;
+            margin-top: 1.5rem;
         }
 
         .requirement-column ul {
@@ -239,71 +242,69 @@
         }
 
         .requirement-column li {
-            font-size: 0.95em;
-            padding: 8px 0;
-            padding-left: 20px;
+            font-size: 0.9375rem;
+            padding: 0.5rem 0;
+            padding-left: 1.25rem;
             position: relative;
-            color: #444;
+            color: rgba(255, 255, 255, 0.8);
         }
 
         .requirement-column li:before {
             content: "•";
             position: absolute;
             left: 0;
-            color: #333;
+            color: rgba(255, 255, 255, 0.5);
             font-weight: bold;
         }
 
+        /* Solution Section */
         .solution-section {
-            margin-bottom: 60px;
+            margin-bottom: 5rem;
         }
 
         .solution-content p {
-            font-size: 1em;
-            line-height: 1.8;
-            color: #444;
-            margin-bottom: 20px;
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
         }
 
+        /* Responsive */
         @media (max-width: 968px) {
-            .intro-section {
-                grid-template-columns: 1fr;
+            .container {
+                padding: 100px 1.5rem 60px;
             }
 
-            .image-grid {
+            .intro-section {
                 grid-template-columns: 1fr;
+                gap: 2.5rem;
             }
 
             .persona-section {
                 grid-template-columns: 1fr;
+                gap: 2.5rem;
             }
 
             .requirements-grid {
                 grid-template-columns: 1fr;
+                gap: 1rem;
             }
 
             h1 {
-                font-size: 2.5em;
-            }
-
-            h2 {
-                font-size: 1.8em;
+                margin-bottom: 0.75rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="nav">
-            <div class="nav-brand">
-                <div class="logo-dot"></div>
-                <span>Jake Riddell</span>
-            </div>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-brand">Jake Riddell</div>
             <div class="nav-links">
-                <a href="/#projects" class="nav-link">Projects</a>
+                <a href="/#work" class="nav-link">Work</a>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <div class="container">
         <a href="/" class="back-button">
@@ -313,8 +314,10 @@
             Back to Portfolio
         </a>
         
-        <h1>Rogers BTS</h1>
-        <p class="subtitle">First place at the uXperience Design Jam</p>
+        <div class="project-header">
+            <h1>Rogers BTS</h1>
+            <p class="subtitle">First place at the uXperience Design Jam</p>
+        </div>
 
         <div class="intro-section">
             <div class="intro-text">
@@ -353,13 +356,13 @@
                     <p>A 56 year old married dad of two that enjoys golfing and a good filet mignon. Walter values exclusivity, family, quality and comfort. Walter appreciates a VIP experience that he can share with his family and is willing to pay for it.</p>
                 </div>
 
-                <h3 style="margin-bottom: 20px; font-size: 1.1em;">Walter's user requirements</h3>
+                <h3>Walter's user requirements</h3>
                 
                 <div class="requirements-grid">
                     <div class="requirement-column">
                         <ul>
                             <li>Personalization</li>
-                            <li>ccess to 5G Tech</li>
+                            <li>Access to 5G Tech</li>
                         </ul>
                     </div>
                     <div class="requirement-column">
@@ -392,8 +395,7 @@
          <section class="solution-section">
             <h2>My Contribution</h2>
             <div class="solution-content">
-                <p>I piloted the idea to gamify Rogers vast sports IP in a similar way to Tim's NHL Challenge but integrate Rogers 5G tech to have live updates from the stadium, Similar to sport network apps like TSN. We encourage customers to return everyday using behavioral rewards like leaderboards and prizes. This was named Play Beyond and quickly became my focus for the day where I was able to work with my team to mold it around our target demographic. I then assited in integrating it into the complete app.
-            </p>
+                <p>I piloted the idea to gamify Rogers vast sports IP in a similar way to Tim's NHL Challenge but integrate Rogers 5G tech to have live updates from the stadium, Similar to sport network apps like TSN. We encourage customers to return everyday using behavioral rewards like leaderboards and prizes. This was named Play Beyond and quickly became my focus for the day where I was able to work with my team to mold it around our target demographic. I then assited in integrating it into the complete app.</p>
             </div>
         </section>
 
