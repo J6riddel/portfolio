@@ -1,0 +1,641 @@
+/* ========================================
+   RESET AND BASE STYLES
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+  background: #000000;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 1.0375rem;
+  transition: opacity 0.3s ease;
+}
+
+.nav-link:hover {
+  opacity: 0.6;
+}
+
+/* ========================================
+   BACK BUTTON
+   ======================================== */
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 2.5rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+.back-button:hover {
+  color: #ffffff;
+  transform: translateX(-3px);
+}
+
+.back-button svg {
+  transition: transform 0.2s;
+}
+
+.back-button:hover svg {
+  transform: translateX(-2px);
+}
+
+/* ========================================
+   CONTAINER
+   ======================================== */
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 120px 2rem 80px;
+}
+
+/* ========================================
+   HERO SECTION (Homepage)
+   ======================================== */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 1400px;
+  width: 100%;
+}
+
+.hero-name {
+  font-size: clamp(5rem, 15vw, 12rem);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+
+.hero-credential {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.credential-logo {
+  height: 80px;
+  width: auto;
+}
+
+.credential-text {
+  font-size: 1.005rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.02em;
+}
+
+/* ========================================
+   PROJECTS SECTION (Homepage)
+   ======================================== */
+
+.projects-section {
+  padding: 4rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.project-card {
+  display: block;
+  cursor: pointer;
+}
+
+.project-header {
+  margin-bottom: 1rem;
+}
+
+.project-meta {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-meta::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 0.375rem;
+}
+
+.project-subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+}
+
+.project-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #111;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-glass {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.project-card:hover .project-glass {
+  transform: translateY(0);
+}
+
+.project-description {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+/* ========================================
+   PROJECT PAGES (Case Study Pages)
+   ======================================== */
+
+h1 {
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: clamp(1.875rem, 4vw, 2.5rem);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.02em;
+}
+
+.intro-section {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  margin-bottom: 6rem;
+  align-items: start;
+}
+
+.intro-text p {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+}
+
+.project-details {
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.project-details p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9375rem;
+}
+
+.project-details strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.project-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.project-details li {
+  margin-bottom: 1rem;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.project-details li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: bold;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.section-content {
+  margin-bottom: 5rem;
+}
+
+.section-content p {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 4rem 0 6rem;
+}
+
+.image-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.persona-section {
+  margin-bottom: 6rem;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.persona-intro {
+  margin-bottom: 2.5rem;
+}
+
+.persona-intro p {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.persona-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.persona-image img.ratio-16-9 {
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+}
+
+.requirements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.requirement-column ul {
+  list-style: none;
+}
+
+.requirement-column li {
+  font-size: 0.9375rem;
+  padding: 0.5rem 0;
+  padding-left: 1.25rem;
+  position: relative;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.requirement-column li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: bold;
+}
+
+.solution-section {
+  margin-bottom: 5rem;
+}
+
+.solution-content p {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+}
+
+.logo-center {
+  text-align: center;
+  margin: 5rem 0;
+}
+
+.logo-center img {
+  width: 150px;
+  height: auto;
+  opacity: 0.9;
+}
+
+/* ========================================
+   PROFILE PAGE
+   ======================================== */
+
+.header {
+  text-align: right;
+  margin-bottom: 80px;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 24px;
+  border: 4px solid #f0f0f0;
+}
+
+.header h1 {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.header .subtitle {
+  font-size: 20px;
+  color: #666666;
+  font-weight: 400;
+}
+
+.section {
+  margin-bottom: 80px;
+}
+
+.section-title {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #999999;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.experience-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.experience-item:last-child {
+  border-bottom: none;
+}
+
+.experience-logo {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.experience-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 12px;
+}
+
+.experience-content {
+  flex: 1;
+}
+
+.experience-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.experience-subtitle {
+  font-size: 16px;
+  color: #666666;
+  font-weight: 400;
+}
+
+.experience-date {
+  font-size: 14px;
+  color: #999999;
+  margin-top: 8px;
+}
+
+.about-content {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333333;
+}
+
+.about-content p {
+  margin-bottom: 24px;
+}
+
+.about-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* ========================================
+   UTILITIES
+   ======================================== */
+
+.section-spacer {
+  height: 4rem;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 968px) {
+  .container {
+    padding: 100px 1.5rem 60px;
+  }
+
+  .intro-section {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .persona-section {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .requirements-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  h1 {
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 24px;
+  }
+
+  .header h1 {
+    font-size: 36px;
+  }
+
+  .header .subtitle {
+    font-size: 18px;
+  }
+
+  .experience-item {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .experience-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .about-content {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-credential {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.20rem;
+  }
+
+  .credential-logo {
+    height: 32px;
+  }
+}
