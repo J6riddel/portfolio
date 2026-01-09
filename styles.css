@@ -606,7 +606,7 @@ h3 {
 
 @media (max-width: 768px) {
   .container {
-    padding: 40px 24px;
+    padding: 120px 24px 60px;
   }
 
   .header h1 {
