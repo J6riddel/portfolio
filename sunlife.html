@@ -1,128 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <script>
-    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init zr Wr fi Br Gr ci Nr Hr capture Ui calculateEventProperties Kr register register_once register_for_session unregister unregister_for_session Zr getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Xr Jr createPersonProfile Qr jr ts opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Vr debug O Yr getPageViewId captureTraceFeedback captureTraceMetric Or".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-    posthog.init('phc_lpKBD7CtBAywd3qb1PRMME3l7l6LvEZyDSI2Dc6uQjI', {
-        api_host: 'https://us.i.posthog.com',
-        defaults: '2025-11-30',
-        person_profiles: 'always',
-    })
+      !(function (t, e) {
+        var o, n, p, r;
+        e.__SV ||
+          (window.posthog && window.posthog.__loaded) ||
+          ((window.posthog = e),
+          (e._i = []),
+          (e.init = function (i, s, a) {
+            function g(t, e) {
+              var o = e.split(".");
+              2 == o.length && ((t = t[o[0]]), (e = o[1])),
+                (t[e] = function () {
+                  t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+                });
+            }
+            ((p = t.createElement("script")).type = "text/javascript"),
+              (p.crossOrigin = "anonymous"),
+              (p.async = !0),
+              (p.src =
+                s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") +
+                "/static/array.js"),
+              (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
+                p,
+                r
+              );
+            var u = e;
+            for (
+              void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
+                u.people = u.people || [],
+                u.toString = function (t) {
+                  var e = "posthog";
+                  return (
+                    "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e
+                  );
+                },
+                u.people.toString = function () {
+                  return u.toString(1) + ".people (stub)";
+                },
+                o =
+                  "init zr Wr fi Br Gr ci Nr Hr capture Ui calculateEventProperties Kr register register_once register_for_session unregister unregister_for_session Zr getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Xr Jr createPersonProfile Qr jr ts opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Vr debug O Yr getPageViewId captureTraceFeedback captureTraceMetric Or".split(
+                    " "
+                  ),
+                n = 0;
+              n < o.length;
+              n++
+            )
+              g(u, o[n]);
+            e._i.push([i, s, a]);
+          }),
+          (e.__SV = 1));
+      })(document, window.posthog || []);
+      posthog.init("phc_lpKBD7CtBAywd3qb1PRMME3l7l6LvEZyDSI2Dc6uQjI", {
+        api_host: "https://us.i.posthog.com",
+        defaults: "2025-11-30",
+        person_profiles: "always",
+      });
     </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jake Riddell | Sun Life Fund Forward</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="stylesheet" href="styles.css">
-
-</head>
-<body>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <nav>
-    <div class="nav-container">
-      <a href="/" class="nav-brand">Jake Riddell</a>
-      <div class="nav-links">
-        <a href="/#work" class="nav-link">Work</a>
-        <a href="profil" class="nav-link">Profile</a>
-        <a href="mailto:j6riddel@uwaterloo.ca" class="nav-link">Contact</a>
+      <div class="nav-container">
+        <a href="/" class="nav-brand">Jake Riddell</a>
+        <div class="nav-links">
+          <a href="/#work" class="nav-link">Work</a>
+          <a href="profil" class="nav-link">Profile</a>
+          <a href="mailto:j6riddel@uwaterloo.ca" class="nav-link">Contact</a>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
     <div class="container">
-        <a href="/#work" class="back-button">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            Back to Portfolio
-        </a>
-        
-        <div class="project-header">
-            <h1>Sun Life - Fund Forward</h1>
-            <p class="subtitle">First place at the uXperience Design Jam</p>
+      <a href="/#work" class="back-button">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12.5 15L7.5 10L12.5 5"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        Back to Portfolio
+      </a>
+
+      <div class="project-header">
+        <h1>Sun Life - Fund Forward</h1>
+        <p class="subtitle">First place at the uXperience Design Jam</p>
+      </div>
+
+      <div class="intro-section">
+        <div class="intro-text">
+          <p>
+            Myself and a team of five students spent one day innovating a way to
+            promote financial literacy for young adults.
+          </p>
+
+          <div class="project-details">
+            <p><strong>Role:</strong> UX Designer</p>
+            <p><strong>Software:</strong> Figma, Adobe</p>
+            <p>
+              <strong>Deliverables:</strong> Mid-Fidelity Website and Brand
+              Strategy
+            </p>
+            <p><strong>Time:</strong> 1 Day</p>
+            <p><strong>Team:</strong> 5 students</p>
+          </div>
         </div>
 
-        <div class="intro-section">
-            <div class="intro-text">
-                <p>Myself and a team of five students spent one day innovating a way to promote financial literacy for young adults.</p>
-                
-                <div class="project-details">
-                    <p><strong>Role:</strong> UX Designer</p>
-                    <p><strong>Software:</strong> Figma, Adobe</p>
-                    <p><strong>Deliverables:</strong> Mid-Fidelity Website and Brand Strategy</p>
-                    <p><strong>Time:</strong> 1 Day</p>
-                    <p><strong>Team:</strong> 5 students</p>
-                </div>
-            </div>
-            
-            <div class="hero-image-container">
-                <img src="images/sunlife design jam.avif" alt="Fund Forward Website Mockup" class="hero-image">
-            </div>
+        <div class="hero-image-container">
+          <img
+            src="images/sunlife design jam.avif"
+            alt="Fund Forward Website Mockup"
+            class="hero-image"
+          />
+        </div>
+      </div>
+
+      <section class="section-content">
+        <h2>What we solved</h2>
+        <p>
+          Our task was to design a solution for youths that want to get a start
+          in financial literacy. Our research found that two of the biggest
+          barriers are a lack of knowledge and the over complication of initial
+          steps. Young adults under utilize the resources available and get
+          stuck at the first step because they do not know where they stand
+          financially.
+        </p>
+      </section>
+
+      <section class="section-content">
+        <h2>Who we solved for</h2>
+
+        <div class="persona-intro">
+          <h3>Meet Emily Turner!</h3>
+          <p>
+            Emily is a 29 year old software developer living in Toronto with her
+            spouse. She is focused on saving for a home and preparing for future
+            family expenses. Although comfortable with technology, Emily finds
+            it challenging to prioritize her financial goals especially when
+            planning for long term commitments like retirement.
+          </p>
         </div>
 
-        <section class="section-content">
-            <h2>What we solved</h2>
-            <p>Our task was to design a solution for youths that want to get a start in financial literacy. Our research found that two of the biggest barriers are a lack of knowledge and the over complication of initial steps. Young adults under utilize the resources available and get stuck at the first step because they do not know where they stand financially.</p>
-        </section>
+        <h3>Emily's user requirements</h3>
 
-        <div class="logo-center">
-            <img src="images/TCWnieA2ZM3EaEYlxI7K0oR14.avif" alt="Fund Forward Logo">
+        <div class="requirements-grid">
+          <div class="requirement-column">
+            <ul>
+              <li>Needs to balance multiple goals</li>
+              <li>Wants to understand the impact of major life events</li>
+            </ul>
+          </div>
+          <div class="requirement-column">
+            <ul>
+              <li>Needs to optimize savings and investments</li>
+              <li>Worries about economic stability</li>
+            </ul>
+          </div>
+          <div class="requirement-column">
+            <ul>
+              <li>Struggles to prioritize the future</li>
+              <li>Needs concise planning</li>
+            </ul>
+          </div>
         </div>
+      </section>
 
-        <section class="persona-section">
-            <h2>Who we solved for</h2>
-            
-            <div class="persona-intro">
-                <h3>Meet Emily Turner!</h3>
-                <p>Emily is a 29 year old software developer living in Toronto with her spouse. She is focused on saving for a home and preparing for future family expenses. Although comfortable with technology, Emily finds it challenging to prioritize her financial goals especially when planning for long term commitments like retirement.</p>
-            </div>
+      <div class="image-grid">
+        <img
+          src="images/sunlife logo.avif"
+          alt="Emily Turner Persona Card"
+          class="hero-image"
+          style="width: 100%; height: auto; display: block"
+        />
+        <img
+          src="images/sunlife group.avif"
+          alt="Sunlife Design Jam Group"
+          class="hero-image"
+          style="width: 100%; height: auto; display: block"
+        />
+      </div>
 
-            <h3>Emily's user requirements</h3>
-            
-            <div class="requirements-grid">
-                <div class="requirement-column">
-                    <ul>
-                        <li>Needs to balance multiple goals</li>
-                        <li>Wants to understand the impact of major life events</li>
-                    </ul>
-                </div>
-                <div class="requirement-column">
-                    <ul>
-                        <li>Needs to optimize savings and investments</li>
-                        <li>Worries about economic stability</li>
-                    </ul>
-                </div>
-                <div class="requirement-column">
-                    <ul>
-                        <li>Struggles to prioritize the future</li>
-                        <li>Needs concise planning</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <div class="image-grid">
-            <img src="images/sunlife logo.avif" alt="Emily Turner Persona Card">
-            <img src="images/sunlife group.avif" alt="Sunlife Design Jam Group">
+      <section class="solution-section">
+        <h2>Our Solution</h2>
+        <div class="solution-content">
+          <p>
+            Through the research insights provided by Sun Life, internal
+            innovation and external mentoring, we created
+            <strong>Fund Forward</strong>. Fund Forward is a dynamic look
+            forward into your financial future. We visualize the user end goal
+            using a graph that highlights life milestones and their financial
+            impact. Fund Forward acts as an infographic you can explore to learn
+            more about specific financial decisions.
+          </p>
         </div>
+      </section>
 
-        <section class="solution-section">
-            <h2>Our Solution</h2>
-            <div class="solution-content">
-                <p>Through the research insights provided by Sun Life, internal innovation and external mentoring, we created <strong>Fund Forward</strong>. Fund Forward is a dynamic look forward into your financial future. We visualize the user end goal using a graph that highlights life milestones and their financial impact. Fund Forward acts as an infographic you can explore to learn more about specific financial decisions.</p>
-            </div>
-        </section>
+      <div class="image-grid">
+        <img
+          src="images/sunlife chart.avif"
+          alt="Fund Forward Financial Graph 1"
+          class="hero-image"
+          style="width: 100%; height: auto; display: block"
+        />
+        <img
+          src="images/cqLRBmMXjRTGFWRoF2J5xMJ3s.avif"
+          alt="Fund Forward Financial Graph 2"
+          class="hero-image"
+          style="width: 100%; height: auto; display: block"
+        />
+      </div>
 
-        <div class="image-grid">
-            <img src="images/sunlife chart.avif" alt="Fund Forward Financial Graph 1">
-            <img src="images/cqLRBmMXjRTGFWRoF2J5xMJ3s.avif" alt="Fund Forward Financial Graph 2">
+      <section class="solution-section">
+        <h2>Challenges</h2>
+        <div class="solution-content">
+          <p>
+            The biggest limiting factor for our team was time. With only one day
+            to research, ideate, design, and pitch to Sun Life judges, we had to
+            make quick decisions. This time constraint limited our ability to
+            conduct extensive user testing with diverse demographics. While
+            Emily represented our primary persona, future iterations would
+            benefit from testing with users across different age groups, income
+            levels, and financial literacy backgrounds to ensure the tool is
+            truly accessible and valuable for all young adults starting their
+            financial journey.
+          </p>
         </div>
-
-        <section class="solution-section">
-            <h2>Challenges</h2>
-            <div class="solution-content">
-                <p>The biggest limiting factor for our team was time. With only one day to research, ideate, design, and pitch to Sun Life judges, we had to make quick decisions. This time constraint limited our ability to conduct extensive user testing with diverse demographics. While Emily represented our primary persona, future iterations would benefit from testing with users across different age groups, income levels, and financial literacy backgrounds to ensure the tool is truly accessible and valuable for all young adults starting their financial journey.</p>
-            </div>
-        </section>
+      </section>
     </div>
-</body>
+  </body>
 </html>
