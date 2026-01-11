@@ -300,14 +300,14 @@ h3 {
 .intro-text p {
   font-size: 1.0625rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 2rem;
 }
 
 .project-details {
   font-size: 0.9375rem;
   line-height: 1.9;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .project-details p {
@@ -335,7 +335,7 @@ h3 {
   content: "•";
   position: absolute;
   left: 0;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.9);
   font-weight: bold;
 }
 
@@ -352,7 +352,7 @@ h3 {
 .section-content p {
   font-size: 1.0625rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 1.5rem;
 }
 
@@ -378,7 +378,7 @@ h3 {
 .persona-intro p {
   font-size: 1.0625rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .requirements-grid {
@@ -397,7 +397,7 @@ h3 {
   padding: 0.5rem 0;
   padding-left: 1.25rem;
   position: relative;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .requirement-column li:before {
@@ -415,7 +415,7 @@ h3 {
 .solution-content p {
   font-size: 1.0625rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 1.5rem;
 }
 
