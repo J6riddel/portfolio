@@ -131,6 +131,13 @@ nav {
   line-height: 0.9;
   letter-spacing: -0.03em;
 }
+.hero-name-light {
+  color: rgba(66, 66, 66, 0.5);
+  font-size: clamp(5rem, 15vw, 12rem);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
 
 .hero-credential {
   display: flex;
@@ -195,7 +202,7 @@ nav {
 }
 
 .project-title {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 600;
   line-height: 1.2;
   margin-bottom: 0.375rem;
