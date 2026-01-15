@@ -15,7 +15,7 @@
             text-align: left; 
         }
         h1 { font-size: clamp(4rem, 12vw, 10rem); font-weight: 700; margin: 0 0 3rem 0; }
-        .contacts { margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; text-align: left;}
+        .contacts { margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; text-align: center;}
         .contact { font-size: clamp(1.25rem, 3.5vw, 2.5rem); font-weight: 600; }
         .contact a { color: #fff; text-decoration: none; }
         .contact a:hover { opacity: 0.8; }
@@ -59,19 +59,17 @@ function toggleResume() {
             </div>
         </div>
   </nav>
-
-    <h1>Contact</h1>
     
     <div class="contacts">
         <div class="contact"><a href="mailto:j6riddel@uwaterloo.ca">j6riddel@uwaterloo.ca</a></div>
         <div class="contact"><a href="https://www.linkedin.com/in/jakeridd/" target="_blank">LinkedIn</a></div>
-        <div class="contact"><a href="https://jakeriddell.work">jakeriddell.com</a></div>
+        <div class="contact"><a href="https://jakeriddell.work">jakeriddell.work</a></div>
         <div class="contact resume-toggle" onclick="toggleResume()">Resume</div>
     
         <!-- Hidden PDF viewer -->
         <div id="resume-viewer" class="resume-viewer" style="display: none;">
         <iframe src="images/Github Portfolio.pdf" width="100%" height="1100" frameborder="0"></iframe>
     </div>
-    </div>
+    <h1 style="text-align: left; color: #ffffff50; margin-top: 5rem;">Contact</h1>
 </body>
 </html>
