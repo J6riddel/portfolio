@@ -24,7 +24,7 @@
         .resume-viewer {
          width: 100%; 
          max-width: 800px; 
-         margin-top: 2rem;
+         margin: 2rem auto;
          border-radius: 8px;
          overflow: hidden;
         }
@@ -64,13 +64,13 @@ function toggleResume() {
     
     <div class="contacts">
         <div class="contact"><a href="mailto:j6riddel@uwaterloo.ca">j6riddel@uwaterloo.ca</a></div>
-        <div class="contact"><a href="https://www.linkedin.com/in/jakeridd/">LinkedIn</a></div>
+        <div class="contact"><a href="https://www.linkedin.com/in/jakeridd/" target="_blank">LinkedIn</a></div>
         <div class="contact"><a href="https://jakeriddell.work">jakeriddell.com</a></div>
         <div class="contact resume-toggle" onclick="toggleResume()">Resume</div>
     
         <!-- Hidden PDF viewer -->
         <div id="resume-viewer" class="resume-viewer" style="display: none;">
-        <iframe src="images/Github Portfolio.pdf" width="100%" height="800" frameborder="0"></iframe>
+        <iframe src="images/Github Portfolio.pdf" width="100%" height="1100" frameborder="0"></iframe>
     </div>
     </div>
 </body>
