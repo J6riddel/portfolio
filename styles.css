@@ -13,8 +13,7 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI",
-    sans-serif;
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: #000000;
   color: #ffffff;
   line-height: 1.6;
