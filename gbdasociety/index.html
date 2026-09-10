@@ -12,30 +12,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jake Riddell | GBDA Society</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="stylesheet" href="/styles.css">
 
 </head>
 <body>
     <nav>
         <div class="nav-container">
             <a href="/" class="nav-brand">Jake Riddell</a>
-            <div class="nav-links">
-                <a href="/#work" class="nav-link">Work</a>
-                <a href="profile" class="nav-link">Profile</a>
-                <a href="contact" class="nav-link">Contact</a>
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+              <span class="nav-toggle-bar"></span>
+              <span class="nav-toggle-bar"></span>
+              <span class="nav-toggle-bar"></span>
+            </button>
+            <div class="nav-links" id="nav-menu">
+                <a href="/work" class="nav-link">Work</a>
+                <a href="/profile" class="nav-link">Profile</a>
+                <a href="/contact" class="nav-link">Contact</a>
             </div>
         </div>
   </nav>
 
     <div class="container">
-        <a href="/#work" class="back-button">
+        <a href="/work" class="back-button">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             Back to Portfolio
         </a>
-        
+
         <div class="project-header">
             <h1>Project & Event Management</h1>
             <p class="subtitle">Student Leader</p>
@@ -44,7 +49,7 @@
         <div class="intro-section">
             <div class="intro-text">
                 <p>Project & Event Management is a passion that I first recognized when I joined the Global Business and Digital Arts (GBDA) Society as their Communications Director. I was thrown head first into high level team management, rapid coordination and essential initiative. I ran with this pressure and learned it was something I thrive in. Since then, I have run many events, led the GBDA Society as the President and completed formal university courses on Project Management.</p>
-                
+
                 <div class="project-details">
                     <ul>
                         <li><p><strong>Attained over $5000 in  sponsorships and donations.</strong></p></li>
@@ -55,9 +60,9 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="hero-image-container">
-                <img src="images/gbda head.avif" alt="GBDA Co-op Panel" class="hero-image">
+                <img src="/images/gbda head.avif" alt="GBDA Co-op Panel" class="hero-image">
             </div>
         </div>
 
@@ -69,7 +74,7 @@
 
         <div style="width: 80%; margin: 2rem auto">
             <img
-            src="images/gbda sprint 2.jpg"
+            src="/images/gbda sprint 2.jpg"
             alt="Socialpruf Website"
             class="hero-image"
             style="width: 100%; height: auto"
@@ -82,9 +87,9 @@
 
             <section class="section-content">
                 <h2>Funding & Partnerships</h2>
-                <p> Secured $5,000+ in funding to expand opportunities for 500+ peers, including workshops, 
-                industry panels, and design competitions. Facilitated partnerships with industry 
-                professionals from Tim Hortons, Sun Life, and University of Waterloo organizations to 
+                <p> Secured $5,000+ in funding to expand opportunities for 500+ peers, including workshops,
+                industry panels, and design competitions. Facilitated partnerships with industry
+                professionals from Tim Hortons, Sun Life, and University of Waterloo organizations to
              provide mentorship, judging panels, and career coaching for students. </p>
             </section>
 
@@ -94,29 +99,29 @@
 
                 <div class="persona-intro">
                     <h3>Toronto Tech Week - June 2025</h3>
-                    <p>As Project Manager, I coordinated an event for 50 participants in partnership with Toronto Tech Week 
-                    and the Stratford School of Interaction Design and Business. I secured over $3,000 in sponsorships and managed 
+                    <p>As Project Manager, I coordinated an event for 50 participants in partnership with Toronto Tech Week
+                    and the Stratford School of Interaction Design and Business. I secured over $3,000 in sponsorships and managed
                     key deliverables including private transportation and custom souvenirs for attendees.
                     </p>
                     <br>
                     <p>
-                    This event featured industry speakers from top tech companies, hands-on workshops, and networking opportunities, 
+                    This event featured industry speakers from top tech companies, hands-on workshops, and networking opportunities,
                     providing attendees with valuable insights into the tech industry and fostering connections with professionals and peers.
                     </p>
                 </div>
-            
+
 
         </div>
 
         <div>
           <img
-            src="images/gbda ttw.jpg"
+            src="/images/gbda ttw.jpg"
             alt="Toronto Tech Week Group"
             class="hero-image"
           />
-        </div> 
-        </section>    
-        
+        </div>
+        </section>
+
       <div class="persona-content">
 
           <div class="persona-intro">
@@ -128,11 +133,11 @@
 
         <div>
           <img
-            src="images/gbda sprint.avif"
+            src="/images/gbda sprint.avif"
             alt="gbda design sprint group"
             class="hero-image"
           />
-        </div> 
+        </div>
 
         <div class="persona-content">
 
@@ -145,11 +150,12 @@
 
         <div>
           <img
-            src="images/gbda mosaic.avif"
+            src="/images/gbda mosaic.avif"
             alt="gbda mosaic"
             class="hero-image"
           />
-        </div> 
+        </div>
     </div>
+  <script src="/nav.js" defer></script>
 </body>
 </html>

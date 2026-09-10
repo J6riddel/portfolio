@@ -12,23 +12,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jake Riddell | Socialpruf</title>
-    <link rel="icon" type="image/png" href="images/favicon.png" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <nav>
       <div class="nav-container">
         <a href="/" class="nav-brand">Jake Riddell</a>
-        <div class="nav-links">
-          <a href="/#work" class="nav-link">Work</a>
-          <a href="profile" class="nav-link">Profile</a>
-          <a href="contact" class="nav-link">Contact</a>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <div class="nav-links" id="nav-menu">
+          <a href="/work" class="nav-link">Work</a>
+          <a href="/profile" class="nav-link">Profile</a>
+          <a href="/contact" class="nav-link">Contact</a>
         </div>
       </div>
     </nav>
 
     <div class="container">
-      <a href="/#work" class="back-button">
+      <a href="/work" class="back-button">
         <svg
           width="20"
           height="20"
@@ -80,7 +85,7 @@
               <li>
                 <p>
                   <strong
-                    >Optimized website UX and design to create a 3.4x 
+                    >Optimized website UX and design to create a 3.4x
                     increase in traffic to our “Get Demo” page.</strong
                   >
                 </p>
@@ -88,7 +93,7 @@
               <li>
                 <p>
                   <strong
-                    >Ran an athlete seeding program for Cuts Clothing with 
+                    >Ran an athlete seeding program for Cuts Clothing with
                     40 collegiate athletes that amplified the brand to 250,000 followers. </strong
                   >
                 </p>
@@ -99,7 +104,7 @@
 
         <div class="hero-image-container">
           <img
-            src="images/campaing canada team.jpg"
+            src="/images/campaing canada team.jpg"
             alt="Socailpruf at Campaign canada"
             class="hero-image"
           />
@@ -116,22 +121,22 @@
           influencers resulting in measurable pipeline expansion.
         </p>
         <p>
-          I became an expert in organic social media growth strategies through daily research and 
-          participation in Socialpruf consulting projects. The product allowed me to gain unique insights in the 
+          I became an expert in organic social media growth strategies through daily research and
+          participation in Socialpruf consulting projects. The product allowed me to gain unique insights in the
           creator economy, influencer marketing, and agency growth strategies.
         </p>
         <p>
           I executed strategic sales campaigns to industry contacts
           including CMOs, agency founders, and VP-level decision-makers,
           building relationships that accelerated product adoption and expanded
-          market presence in the creator economy and agency sectors. I met and called with 
+          market presence in the creator economy and agency sectors. I met and called with
           industry players to learn about their painpoints and how Socialpruf could help them.
         </p>
       </section>
 
       <div style="width: 100%; margin: 2rem 0">
         <img
-          src="images/Screenshot 2025-12-15 175409.png"
+          src="/images/Screenshot 2025-12-15 175409.png"
           alt="Socialpruf Website"
           class="hero-image"
           style="width: 100%; height: auto"
@@ -144,9 +149,9 @@
           <p>
             Led user-centered website redesign through rapid iteration cycles,
             conducting research to identify pain points and optimize conversion
-            paths, directly improving user experience and site performance. 
-            I Integrated 3rd party products into page using custom html blocks in framer. 
-            I created a blog in Framer that had 1200+ views and a 19% bounce rate in four months. 
+            paths, directly improving user experience and site performance.
+            I Integrated 3rd party products into page using custom html blocks in framer.
+            I created a blog in Framer that had 1200+ views and a 19% bounce rate in four months.
             I also utilized my graphic design background to create templates, mockups and social media posts.
             I tried out many different social media strategies at one time across four different platforms,
             and applied my learning to each project.
@@ -155,12 +160,13 @@
       </section>
       <div style="width: 100%; margin: 2rem 0">
         <img
-          src="images/Pruf design (1).png"
+          src="/images/Pruf design (1).png"
           alt="Socialpruf Website"
           class="hero-image"
           style="width: 100%; height: auto"
         />
       </div>
     </div>
-  </body>
+    <script src="/nav.js" defer></script>
+</body>
 </html>
