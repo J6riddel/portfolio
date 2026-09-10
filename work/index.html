@@ -36,11 +36,17 @@
 
   <!-- PROJECTS SECTION -->
   <section id="work" class="projects-section projects-page">
+    <div class="work-tabs" role="tablist" aria-label="Filter projects">
+      <span class="work-tab-pill" aria-hidden="true"></span>
+      <button class="work-tab is-active" type="button" role="tab" aria-selected="true" data-filter="socialpruf">Socialpruf</button>
+      <button class="work-tab" type="button" role="tab" aria-selected="false" data-filter="school">School</button>
+      <button class="work-tab" type="button" role="tab" aria-selected="false" data-filter="side">Side</button>
+    </div>
     <div class="projects-grid">
 
 
       <!-- Project 2 -->
-      <a href="/socialpruf" class="project-card">
+      <a href="/socialpruf" class="project-card" data-category="socialpruf">
         <div class="project-header">
           <h2 class="project-title">Socialpruf Product Marketing</h2>
           <p class="project-subtitle">Co-op</p>
@@ -56,7 +62,7 @@
       </a>
 
       <!-- Project 1 -->
-      <a href="/rogers" class="project-card">
+      <a href="/rogers" class="project-card" data-category="school">
         <div class="project-header">
           <h2 class="project-title">Rogers Beyond The Seat App</h2>
           <p class="project-subtitle">Second Time uXperience Design Jam Winner</p>
@@ -72,7 +78,7 @@
       </a>
 
       <!-- Project 4 -->
-      <a href="/gbdasociety" class="project-card">
+      <a href="/gbdasociety" class="project-card" data-category="school">
         <div class="project-header">
           <h2 class="project-title">GBDA Society President</h2>
           <p class="project-subtitle">Student Leader</p>
@@ -88,7 +94,7 @@
       </a>
 
       <!-- Project 3 -->
-      <a href="/sunlife" class="project-card">
+      <a href="/sunlife" class="project-card" data-category="school">
         <div class="project-header">
           <h2 class="project-title">Sun Life Financial Literacy Tool</h2>
           <p class="project-subtitle">uXperience Design Jam Winner</p>
@@ -110,5 +116,49 @@
   <div class="section-spacer"></div>
 
   <script src="/nav.js" defer></script>
+  <script>
+    (function () {
+      var tabs = document.querySelectorAll('.work-tab');
+      var cards = document.querySelectorAll('.project-card');
+      var pill = document.querySelector('.work-tab-pill');
+      var current = 'socialpruf';
+
+      function movePill() {
+        var active = document.querySelector('.work-tab.is-active');
+        if (!active || !pill) return;
+        pill.style.width = active.offsetWidth + 'px';
+        pill.style.transform = 'translateX(' + active.offsetLeft + 'px)';
+      }
+
+      function apply(filter) {
+        current = filter;
+        cards.forEach(function (card) {
+          card.hidden = card.dataset.category !== filter;
+        });
+        tabs.forEach(function (tab) {
+          var active = tab.dataset.filter === filter;
+          tab.classList.toggle('is-active', active);
+          tab.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        movePill();
+      }
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () { apply(tab.dataset.filter); });
+      });
+
+      apply(current);
+      // Enable the slide only after the first placement, so the pill doesn't
+      // animate in from the left on load.
+      requestAnimationFrame(function () {
+        pill.classList.add('is-ready');
+      });
+
+      window.addEventListener('resize', movePill);
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(movePill);
+      }
+    })();
+  </script>
 </body>
 </html>
