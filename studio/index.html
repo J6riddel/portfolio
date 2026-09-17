@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Unlisted page: keep it out of Google and out of any crawler's index.
+       Deliberately NOT listed in robots.txt — a Disallow line would publish
+       this path to anyone who opens /robots.txt. -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+
+  <title>Riddell Studio</title>
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <!-- Self-contained by design: no /styles.css, no nav, no analytics.
+       This page should leave no trace on the rest of the site. -->
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: #000000;
+      color: #ffffff;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .shell {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: clamp(4rem, 14vh, 9rem) 2rem 5rem;
+    }
+
+    .eyebrow {
+      font-size: 0.8125rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      margin-bottom: 1.75rem;
+    }
+
+    .lede {
+      font-size: clamp(1.0625rem, 2.2vw, 1.375rem);
+      color: rgba(255, 255, 255, 0.72);
+      max-width: 40ch;
+    }
+
+    .rule {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.12);
+      margin: clamp(3rem, 8vh, 5rem) 0;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .services h2 {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .services p {
+      font-size: 0.9375rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .contact h2 {
+      font-size: 0.8125rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+      font-weight: 400;
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-link {
+      display: inline-block;
+      font-size: clamp(1.375rem, 4vw, 2.25rem);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      padding-bottom: 0.15em;
+      transition: border-color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .contact-link:hover { opacity: 0.75; border-color: rgba(255, 255, 255, 0.6); }
+
+    .meta {
+      margin-top: 2.5rem;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .meta a { border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+    .meta a:hover { color: rgba(255, 255, 255, 0.7); }
+
+    @media (max-width: 600px) {
+      .shell { padding: 4.5rem 1.5rem 3.5rem; }
+      .services { gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="shell">
+
+    <!-- EDIT ME: agency name + positioning -->
+    <p class="eyebrow">Riddell Studio</p>
+
+    <h1>Go-to-market help for teams that need to move.</h1>
+
+    <p class="lede">
+      An independent practice run by Jake Riddell. Strategy and execution for
+      early-stage and growth-stage companies — brought in directly, no agency layers.
+    </p>
+
+    <div class="rule"></div>
+
+    <!-- EDIT ME: services -->
+    <section class="services">
+      <div>
+        <h2>Go-to-market</h2>
+        <p>Positioning, messaging, launch planning and the sequencing to get a product in front of the right buyers.</p>
+      </div>
+      <div>
+        <h2>Digital marketing</h2>
+        <p>Paid, lifecycle and content programs built to be measured — set up so the numbers mean something.</p>
+      </div>
+      <div>
+        <h2>Growth advisory</h2>
+        <p>Ongoing support for founders and lean teams: channel strategy, analytics, and hands-on execution.</p>
+      </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <section class="contact">
+      <h2>Get in touch</h2>
+      <a class="contact-link" href="mailto:j6riddel@uwaterloo.ca">j6riddel@uwaterloo.ca</a>
+      <p class="meta">
+        Toronto, Canada &nbsp;·&nbsp;
+        <a href="https://www.linkedin.com/in/jakeridd/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </p>
+    </section>
+
+  </main>
+
+</body>
+</html>
