@@ -25,95 +25,88 @@
       color: #ffffff;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      /* The page is short by design — hold it in the middle of the viewport
+         so the surrounding emptiness reads as deliberate, not unfinished. */
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
     }
 
     a { color: inherit; text-decoration: none; }
 
     .shell {
-      max-width: 900px;
+      width: 100%;
+      max-width: 720px;
       margin: 0 auto;
-      padding: clamp(4rem, 14vh, 9rem) 2rem 5rem;
+      padding: 5rem 2rem;
     }
 
     .eyebrow {
-      font-size: 0.8125rem;
-      letter-spacing: 0.18em;
+      font-size: 0.75rem;
+      letter-spacing: 0.32em;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.45);
-      margin-bottom: 2rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: clamp(3rem, 9vh, 5rem);
     }
 
     h1 {
-      font-size: clamp(2.5rem, 7vw, 5rem);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      line-height: 1.05;
-      margin-bottom: 1.75rem;
+      font-size: clamp(2.75rem, 7vw, 4.5rem);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      line-height: 1.02;
+      margin-bottom: 2rem;
     }
 
     .lede {
-      font-size: clamp(1.0625rem, 2.2vw, 1.375rem);
-      color: rgba(255, 255, 255, 0.72);
-      max-width: 40ch;
+      font-size: 1.0625rem;
+      color: rgba(255, 255, 255, 0.62);
+      max-width: 38ch;
     }
 
     .rule {
       height: 1px;
-      background: rgba(255, 255, 255, 0.12);
-      margin: clamp(3rem, 8vh, 5rem) 0;
+      background: rgba(255, 255, 255, 0.14);
+      margin: clamp(3.5rem, 10vh, 6rem) 0;
     }
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 2.5rem;
-      list-style: none;
-    }
-
-    .services h2 {
-      font-size: 1.0625rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .services p {
+    .note {
       font-size: 0.9375rem;
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 2.5rem;
     }
 
     .contact h2 {
-      font-size: 0.8125rem;
-      letter-spacing: 0.18em;
+      font-size: 0.75rem;
+      letter-spacing: 0.32em;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.45);
+      color: rgba(255, 255, 255, 0.5);
       font-weight: 400;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
 
     .contact-link {
       display: inline-block;
-      font-size: clamp(1.375rem, 4vw, 2.25rem);
-      font-weight: 600;
+      font-size: clamp(1.25rem, 3.4vw, 1.875rem);
+      font-weight: 400;
       letter-spacing: -0.01em;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-      padding-bottom: 0.15em;
-      transition: border-color 0.2s ease, opacity 0.2s ease;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+      padding-bottom: 0.18em;
+      transition: border-color 0.25s ease, opacity 0.25s ease;
     }
 
-    .contact-link:hover { opacity: 0.75; border-color: rgba(255, 255, 255, 0.6); }
+    .contact-link:hover { opacity: 0.7; border-color: rgba(255, 255, 255, 0.65); }
 
     .meta {
-      margin-top: 2.5rem;
-      font-size: 0.875rem;
-      color: rgba(255, 255, 255, 0.4);
+      margin-top: 3rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.35);
     }
 
-    .meta a { border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
-    .meta a:hover { color: rgba(255, 255, 255, 0.7); }
-
     @media (max-width: 600px) {
-      .shell { padding: 4.5rem 1.5rem 3.5rem; }
-      .services { gap: 2rem; }
+      body { align-items: flex-start; }
+      .shell { padding: 5rem 1.5rem 3.5rem; }
     }
   </style>
 </head>
@@ -124,45 +117,20 @@
     <!-- EDIT ME: agency name + positioning -->
     <p class="eyebrow">Riddell Social</p>
 
-    <h1>Social media management for brands that want to sound like people.</h1>
+    <h1>Social, handled quietly.</h1>
 
     <p class="lede">
-      An independent social studio run by Jake Riddell. Strategy, content and
-      community — handled end to end, by the person actually doing the work.
+      A private social media practice. We take on a small number of brands each
+      year and run their channels end to end — strategy, content, community.
     </p>
 
     <div class="rule"></div>
 
-    <!-- EDIT ME: services -->
-    <section class="services">
-      <div>
-        <h2>Strategy &amp; positioning</h2>
-        <p>Channel mix, content pillars and a voice that fits the brand — built on what your audience already responds to.</p>
-      </div>
-      <div>
-        <h2>Content production</h2>
-        <p>Short-form video, static and copy, produced on a steady calendar so the feed never goes quiet.</p>
-      </div>
-      <div>
-        <h2>Community management</h2>
-        <p>Daily publishing, comments, DMs and engagement — the unglamorous part that decides whether any of it works.</p>
-      </div>
-      <div>
-        <h2>Paid social</h2>
-        <p>Boosting what earns it and running campaigns that scale the organic winners instead of starting from scratch.</p>
-      </div>
-      <div>
-        <h2>Reporting</h2>
-        <p>A monthly read on what moved, what flopped and what changes next month. No vanity dashboards.</p>
-      </div>
-    </section>
-
-    <div class="rule"></div>
-
     <section class="contact">
-      <h2>Work with me</h2>
+      <p class="note">Currently accepting new clients by introduction.</p>
+      <h2>Enquiries</h2>
       <a class="contact-link" href="mailto:jakeridd22@gmail.com">jakeridd22@gmail.com</a>
-      <p class="meta">Toronto, Canada</p>
+      <p class="meta">Toronto</p>
     </section>
 
   </main>
